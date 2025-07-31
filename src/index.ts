@@ -33,5 +33,6 @@ const desconto = 0.1; // 10% de desconto
 // listar o pedido
 listarPedido(pedido, desconto);
 
+
 // calcular total do pedido
 calcularTotal({ pedido, desconto });
