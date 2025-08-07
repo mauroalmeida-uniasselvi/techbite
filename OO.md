@@ -33,13 +33,18 @@ class ContaCorrente extends Conta {
    // ...
    console.log("O saldo total eh") 
  }
+ // abrirCofre() {
+ //   super().abrirCofre();
+ // }
 }
+
 
 const conta = new ContaCorrente()
 
-❌ conta.abrirCobre()
+❌ conta.abrirCofre()
+❌ conta.saldo
 
-✓ conta.verSaldo()
+✅ conta.verSaldo()
 
 
 
