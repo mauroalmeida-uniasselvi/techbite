@@ -26,6 +26,7 @@ class Conta {
   constructor(s: number) { this.saldo = s; }
   depositar(v: number) { if (v > 0) this.saldo += v; }
   verSaldo() { return this.saldo; }
+  protected abrirCofre() {}
 }
 class ContaCorrente extends Conta {
   private transacoes: Transacao[]
