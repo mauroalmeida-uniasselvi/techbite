@@ -12,6 +12,8 @@ Paradigma baseado em **objetos** (instâncias de classes) que possuem **atributo
 
 Oculta dados internos da classe, expondo apenas o necessário.
 
+O modificadores dos atributos podem ser publicos (public), privados (private) e protegidos (protected)
+
 ```ts
 class Conta {
   private saldo: number;
