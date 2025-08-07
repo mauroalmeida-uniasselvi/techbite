@@ -91,8 +91,13 @@ class Forma {
   }
 }
 class Circulo extends Forma {
+  // exemplo de sobrescrita, porque Forma já possui esse método
   desenhar() {
     console.log("Círculo");
+  }
+  // exemplo de sobrecarga, porque já existia um método com esse nome
+  desenhar(tamanho: number) {
+    console.log("Círculo", tamanho);
   }
 }
 ```
