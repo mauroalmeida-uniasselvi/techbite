@@ -53,7 +53,7 @@ const conta = new ContaCorrente()
 
 ---
 
-### 2. Herança
+### 2. Herança / Abstração
 
 Permite que uma classe herde atributos e métodos de outra.  
 A classe que herda é chamada de **subclasse** e a que é herdada é chamada de **superclasse**.
