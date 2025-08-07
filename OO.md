@@ -23,7 +23,6 @@ class Transacao {
 
 class Conta {
   private saldo: number;
-  constructor(s: number) { this.saldo = s; }
   depositar(v: number) { if (v > 0) this.saldo += v; }
   verSaldo() { return this.saldo; }
   protected abrirCofre() {}
@@ -35,6 +34,16 @@ class ContaCorrente extends Conta {
    console.log("O saldo total eh") 
  }
 }
+
+const conta = new ContaCorrente()
+
+❌ conta.abrirCobre()
+
+✓ conta.verSaldo()
+
+
+
+
 ```
 
 ---
