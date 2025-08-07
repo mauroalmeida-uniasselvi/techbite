@@ -55,8 +55,16 @@ class Carro {
 Permite que métodos com o mesmo nome tenham comportamentos diferentes, por sobrescrita (override) ou sobrecarga (overload).
 
 ```ts
-class Forma { desenhar() { console.log("Forma"); } }
-class Circulo extends Forma { desenhar() { console.log("Círculo"); } }
+class Forma {
+  desenhar() {
+    console.log("Forma");
+  }
+}
+class Circulo extends Forma {
+  desenhar() {
+    console.log("Círculo");
+  }
+}
 ```
 
 Outro exemplo:
