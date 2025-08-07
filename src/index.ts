@@ -1,6 +1,5 @@
-// import { adicionarProduto, Produto, listarPedido, calcularTotal } from "./pedido.fn";
 
-import { Pedido, Produto  } from "./pedido.oo"
+import { Pedido, Produto  } from "./pedido"
 
 const cafe =  new Produto("Café", 5);
 const refrigerante: Produto = new Produto("Refrigerante", 4.5)
