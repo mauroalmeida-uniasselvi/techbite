@@ -15,6 +15,12 @@ Oculta dados internos da classe, expondo apenas o necessário.
 O modificadores dos atributos podem ser publicos (public), privados (private) e protegidos (protected)
 
 ```ts
+class Transacao {
+  operacao: string; // debito | credito
+  valor: number
+  data: number
+}
+
 class Conta {
   private saldo: number;
   constructor(s: number) { this.saldo = s; }
@@ -22,6 +28,11 @@ class Conta {
   verSaldo() { return this.saldo; }
 }
 class ContaCorrente extends Conta {
+  private transacoes: Transacao[]
+  verTransacoes() {
+   // ...
+   console.log("O saldo total eh") 
+ }
 }
 ```
 
