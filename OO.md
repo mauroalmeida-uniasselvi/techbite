@@ -21,6 +21,8 @@ class Conta {
   depositar(v: number) { if (v > 0) this.saldo += v; }
   verSaldo() { return this.saldo; }
 }
+class ContaCorrente extends Conta {
+}
 ```
 
 ---
