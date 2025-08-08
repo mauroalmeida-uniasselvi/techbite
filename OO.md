@@ -12,18 +12,48 @@ Paradigma baseado em **objetos** (instâncias de classes) que possuem **atributo
 
 Oculta dados internos da classe, expondo apenas o necessário.
 
+O modificadores dos atributos podem ser publicos (public), privados (private) e protegidos (protected)
+
 ```ts
+class Transacao {
+  operacao: string; // debito | credito
+  valor: number
+  data: number
+}
+
 class Conta {
   private saldo: number;
-  constructor(s: number) { this.saldo = s; }
   depositar(v: number) { if (v > 0) this.saldo += v; }
   verSaldo() { return this.saldo; }
+  protected abrirCofre() {}
 }
+class ContaCorrente extends Conta {
+  private transacoes: Transacao[]
+  verTransacoes() {
+   // ...
+   console.log("O saldo total eh") 
+ }
+ // abrirCofre() {
+ //   super().abrirCofre();
+ // }
+}
+
+
+const conta = new ContaCorrente()
+
+❌ conta.abrirCofre()
+❌ conta.saldo
+
+✅ conta.verSaldo()
+
+
+
+
 ```
 
 ---
 
-### 2. Herança
+### 2. Herança / Abstração
 
 Permite que uma classe herde atributos e métodos de outra.  
 A classe que herda é chamada de **subclasse** e a que é herdada é chamada de **superclasse**.
@@ -55,8 +85,21 @@ class Carro {
 Permite que métodos com o mesmo nome tenham comportamentos diferentes, por sobrescrita (override) ou sobrecarga (overload).
 
 ```ts
-class Forma { desenhar() { console.log("Forma"); } }
-class Circulo extends Forma { desenhar() { console.log("Círculo"); } }
+class Forma {
+  desenhar() {
+    console.log("Forma");
+  }
+}
+class Circulo extends Forma {
+  // exemplo de sobrescrita, porque Forma já possui esse método
+  desenhar() {
+    console.log("Círculo");
+  }
+  // exemplo de sobrecarga, porque já existia um método com esse nome
+  desenhar(tamanho: number) {
+    console.log("Círculo", tamanho);
+  }
+}
 ```
 
 Outro exemplo:
