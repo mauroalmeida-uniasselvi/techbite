@@ -1,24 +1,17 @@
+import { randomUUID } from 'node:crypto';
 
-
-export class Produto {
-    nome: string;
-    preco: number;
-
-    constructor(nome: string, preco: number) {
-        this.nome = nome
-        this.preco = preco
-    }
-}
+import { Cliente } from "./cliente";
+import { Produto } from "./produto"
 
 export class Pedido {
     produtos: Produto[] = []
-    desconto: number = 0
-    identificacao: string;
+    identificacao: string = randomUUID()
+    cliente: Cliente
 
-    constructor(identificacao: string){
-        this.identificacao = identificacao
+    constructor(cliente: Cliente){
+        this.cliente = cliente
         console.log("\n\n\n")
-        console.log(`iniciando o pedido ${identificacao}..`);
+        console.log(`iniciando o pedido ${this.identificacao}...`);
     }
 
     adicionarProduto(produto: Produto): void {
@@ -26,11 +19,12 @@ export class Pedido {
         this.produtos.push(produto);
     }
 
-    alterarDesconto(desconto: number) {
-        this.desconto = desconto
+    private descontoCliente() {
+        return this.cliente.verDesconto();
     }
 
     listar(): void {
+        const desconto = this.descontoCliente();
 
         if (this.produtos.length === 0) {
             console.log("a listagem de produtos está vazia")
@@ -40,8 +34,8 @@ export class Pedido {
         this.produtos.forEach((produto) => {
             console.log(`${produto.nome}`);
             console.log(`   - R$${produto.preco.toFixed(2)}`);
-            if (this.desconto > 0) {
-                const precoComDesconto = produto.preco - produto.preco * this.desconto;
+            if (desconto > 0) {
+                const precoComDesconto = produto.preco - produto.preco * desconto;
                 console.log(`   - com desconto R$${precoComDesconto.toFixed(2)}`);
             }
         });
@@ -49,8 +43,9 @@ export class Pedido {
 
 
     calcularTotal(): number {
+        const desconto = this.descontoCliente();
         const total = this.produtos.reduce((acc: number, produto: Produto) => acc + produto.preco, 0);
-        const totalComDesconto = total - total * this.desconto;
+        const totalComDesconto = total - total * desconto;
         console.log(`Total sem desconto: R$ ${total.toFixed(2)}`);
         console.log(`Total com desconto: R$ ${totalComDesconto.toFixed(2)}`);
         return totalComDesconto;

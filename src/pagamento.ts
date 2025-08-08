@@ -1,6 +1,7 @@
 
 
 export interface Pagamento{
+    // calcularDesconto(): number;
     pagar(): void;
 }
 
