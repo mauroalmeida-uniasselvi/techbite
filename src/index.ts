@@ -2,6 +2,7 @@
 import { Produto } from "./produto"
 import { Pedido } from "./pedido"
 import { Cliente, ClienteAssociado, ClienteComum, TipoCliente } from "./cliente"
+import { FabricaSimplesPagamento, Pagamento, PagamentoCartao, PagamentoDinheiro, PagamentoPix, TipoPagamento } from "./pagamento";
 
 const cafe = new Produto("Café", 5);
 const refrigerante: Produto = new Produto("Refrigerante", 4.5)
@@ -35,6 +36,15 @@ pedido2.adicionarProduto(cafe)
 pedido2.adicionarProduto(paoovo)
 pedido2.listar()
 pedido2.calcularTotal()
+
+
+const selecaoPagamento: TipoPagamento = TipoPagamento.CARTAO
+
+
+const pagamento: Pagamento = FabricaSimplesPagamento.criarPagamento(selecaoPagamento)
+
+
+pagamento.pagar(pedido2.calcularTotal())
 
 // inicia e cria o pedido
 // const pedido1: Produto[] = [];

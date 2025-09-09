@@ -1,29 +1,29 @@
-// Produto
-interface Payment {
-  pay(amount: number): void;
+
+interface Pagamento {
+  pagar(amount: number): void;
 }
 
 // Implementações MercadoLivre e Pagarme
-class MercadoLivrePayment implements Payment {
-  pay(amount: number): void {
+class MercadoLivrePagamento implements Pagamento {
+  pagar(amount: number): void {
     console.log(`Pagando R$${amount} via MercadoLivre`);
   }
 }
 
-class PagarmePayment implements Payment {
-  pay(amount: number): void {
+class PagarmePagamento implements Pagamento {
+  pagar(amount: number): void {
     console.log(`Pagando R$${amount} via Pagarme`);
   }
 }
 
 // Simple Factory
-class PaymentFactory {
-  static createPayment(type: string): Payment {
+class PagamentoFactory {
+  static createPagamento(type: string): Pagamento {
     switch (type) {
       case 'mercadolivre':
-        return new MercadoLivrePayment();
+        return new MercadoLivrePagamento();
       case 'pagarme':
-        return new PagarmePayment();
+        return new PagarmePagamento();
       default:
         throw new Error('Tipo de pagamento não suportado');
     }
@@ -31,8 +31,8 @@ class PaymentFactory {
 }
 
 // Exemplo de uso
-const payment1 = PaymentFactory.createPayment('mercadolivre');
-payment1.pay(100);
+const Pagamento1 = PagamentoFactory.createPagamento('mercadolivre');
+Pagamento1.pagar(100);
 
-const payment2 = PaymentFactory.createPayment('pagarme');
-payment2.pay(200);
+const Pagamento2 = PagamentoFactory.createPagamento('pagarme');
+Pagamento2.pagar(200);
