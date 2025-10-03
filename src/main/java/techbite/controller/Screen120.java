@@ -5,16 +5,24 @@ import java.util.Scanner;
 /**
  * Tela 1.2.0 - Pedidos
  */
-public class Screen120 {
+public class Screen120 extends ScreenMain {
+    private static final Screen120 instance = new Screen120();
 
     public static void show(Scanner scanner) {
+        instance.showMenu(scanner);
+    }
+    
+    private void showMenu(Scanner scanner) {
         while (true) {
-            System.out.println("\n--- Tela 1.2.0 - Pedidos ---");
-            System.out.println("1. Criar pedido — iniciar pedido e adicionar itens");
-            System.out.println("2. Listar pedidos — filtrar por status/cliente");
-            System.out.println("3. Ver/Editar pedido — alterar itens/status");
-            System.out.println("0. Voltar");
-            System.out.print("Escolha uma opcao: ");
+            showHeader("Pedidos v1.2.0");
+            
+            showMenuItem("1", "🛍️", "Criar pedido", "iniciar pedido e adicionar itens", GREEN);
+            showMenuItem("2", "📋", "Listar pedidos", "filtrar por status/cliente", BLUE);
+            showMenuItem("3", "✏️", "Ver/Editar pedido", "alterar itens/status", YELLOW);
+            showMenuItem("0", "⬅️", "Voltar", "", CYAN);
+            
+            showFooter();
+            showInputPrompt("Escolha uma opção: ");
 
             String input = scanner.nextLine().trim();
             switch (input) {

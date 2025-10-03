@@ -5,15 +5,23 @@ import java.util.Scanner;
 /**
  * Tela 1.3.0 - Pagamentos
  */
-public class Screen130 {
+public class Screen130 extends ScreenMain {
+    private static final Screen130 instance = new Screen130();
 
     public static void show(Scanner scanner) {
+        instance.showMenu(scanner);
+    }
+    
+    private void showMenu(Scanner scanner) {
         while (true) {
-            System.out.println("\n--- Tela 1.3.0 - Pagamentos ---");
-            System.out.println("1. Registrar pagamento — escolher forma e confirmar");
-            System.out.println("2. Listar pagamentos — historico");
-            System.out.println("0. Voltar");
-            System.out.print("Escolha uma opcao: ");
+            showHeader("Pagamentos v1.3.0");
+            
+            showMenuItem("1", "💰", "Registrar pagamento", "escolher forma e confirmar", GREEN);
+            showMenuItem("2", "📋", "Listar pagamentos", "histórico", BLUE);
+            showMenuItem("0", "⬅️", "Voltar", "", CYAN);
+            
+            showFooter();
+            showInputPrompt("Escolha uma opção: ");
 
             String input = scanner.nextLine().trim();
             switch (input) {

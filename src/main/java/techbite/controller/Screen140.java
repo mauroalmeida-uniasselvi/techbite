@@ -5,15 +5,23 @@ import java.util.Scanner;
 /**
  * Tela 1.4.0 - Notas fiscais
  */
-public class Screen140 {
+public class Screen140 extends ScreenMain {
+    private static final Screen140 instance = new Screen140();
 
     public static void show(Scanner scanner) {
+        instance.showMenu(scanner);
+    }
+    
+    private void showMenu(Scanner scanner) {
         while (true) {
-            System.out.println("\n--- Tela 1.4.0 - Notas fiscais ---");
-            System.out.println("1. Listar notas — consultar por pedido");
-            System.out.println("2. Gerar nota — para pedido pago");
-            System.out.println("0. Voltar");
-            System.out.print("Escolha uma opcao: ");
+            showHeader("Notas Fiscais v1.4.0");
+            
+            showMenuItem("1", "📄", "Listar notas", "consultar por pedido", BLUE);
+            showMenuItem("2", "✨", "Gerar nota", "para pedido pago", GREEN);
+            showMenuItem("0", "⬅️", "Voltar", "", CYAN);
+            
+            showFooter();
+            showInputPrompt("Escolha uma opção: ");
 
             String input = scanner.nextLine().trim();
             switch (input) {

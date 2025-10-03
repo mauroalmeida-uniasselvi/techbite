@@ -2,15 +2,23 @@ package techbite.controller;
 
 import java.util.Scanner;
 
-public class Screen110 {
-
+public class Screen110 extends ScreenMain {
+    private static final Screen110 instance = new Screen110();
+    
     public static void show(Scanner scanner) {
+        instance.showMenu(scanner);
+    }
+    
+    private void showMenu(Scanner scanner) {
         while (true) {
-            System.out.println("\n--- Tela 1.1.0 - Cadastros ---");
-            System.out.println("1. Clientes — listar / criar / buscar");
-            System.out.println("2. Produtos — listar / criar / ajustar estoque");
-            System.out.println("0. Voltar");
-            System.out.print("Escolha uma opcao: ");
+            showHeader("Cadastros v1.1.0");
+            
+            showMenuItem("1", "👥", "Clientes", "listar / criar / buscar", YELLOW);
+            showMenuItem("2", "📦", "Produtos", "listar / criar / ajustar estoque", GREEN);
+            showMenuItem("0", "⬅️", "Voltar", "", CYAN);
+            
+            showFooter();
+            showInputPrompt("Escolha uma opção: ");
 
             String input = scanner.nextLine().trim();
             switch (input) {
