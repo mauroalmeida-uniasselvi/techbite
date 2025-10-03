@@ -19,7 +19,7 @@ public abstract class ScreenMain {
 
     protected void showHeader(String title) {
         clearScreen();
-        String currentTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
+        String currentTime = LocalDateTime.now().atZone(java.time.ZoneId.of("America/Sao_Paulo")).format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
         
         // Logo ASCII Art
         System.out.println(BLUE + """
