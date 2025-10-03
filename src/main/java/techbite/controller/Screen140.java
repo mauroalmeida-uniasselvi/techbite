@@ -16,9 +16,9 @@ public class Screen140 extends ScreenMain {
         while (true) {
             showHeader("Notas Fiscais v1.4.0");
             
-            showMenuItem("1", "📄", "Listar notas", "consultar por pedido", BLUE);
-            showMenuItem("2", "✨", "Gerar nota", "para pedido pago", GREEN);
-            showMenuItem("0", "⬅️", "Voltar", "", CYAN);
+            showMenuItem("1", "📄", "Listar notas", "consultar por pedido");
+            showMenuItem("2", "✨", "Gerar nota", "para pedido pago");
+            showMenuItem("0", "⬅️", "Voltar", "");
             
             showFooter();
             showInputPrompt("Escolha uma opção: ");

@@ -16,10 +16,10 @@ public class Screen120 extends ScreenMain {
         while (true) {
             showHeader("Pedidos v1.2.0");
             
-            showMenuItem("1", "🛍️", "Criar pedido", "iniciar pedido e adicionar itens", GREEN);
-            showMenuItem("2", "📋", "Listar pedidos", "filtrar por status/cliente", BLUE);
-            showMenuItem("3", "✏️", "Ver/Editar pedido", "alterar itens/status", YELLOW);
-            showMenuItem("0", "⬅️", "Voltar", "", CYAN);
+            showMenuItem("1", "🛍️", "Criar pedido", "iniciar pedido e adicionar itens");
+            showMenuItem("2", "📋", "Listar pedidos", "filtrar por status/cliente");
+            showMenuItem("3", "✏️", "Ver/Editar pedido", "alterar itens/status");
+            showMenuItem("0", "⬅️", "Voltar", "");
             
             showFooter();
             showInputPrompt("Escolha uma opção: ");

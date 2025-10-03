@@ -16,9 +16,9 @@ public class Screen130 extends ScreenMain {
         while (true) {
             showHeader("Pagamentos v1.3.0");
             
-            showMenuItem("1", "💰", "Registrar pagamento", "escolher forma e confirmar", GREEN);
-            showMenuItem("2", "📋", "Listar pagamentos", "histórico", BLUE);
-            showMenuItem("0", "⬅️", "Voltar", "", CYAN);
+            showMenuItem("1", "💰", "Registrar pagamento", "escolher forma e confirmar");
+            showMenuItem("2", "📋", "Listar pagamentos", "histórico");
+            showMenuItem("0", "⬅️", "Voltar", "");
             
             showFooter();
             showInputPrompt("Escolha uma opção: ");

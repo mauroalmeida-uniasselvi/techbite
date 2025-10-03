@@ -18,9 +18,9 @@ public class Screen111 extends ScreenMain {
         while (true) {
             showHeader("Cadastro de Produtos v1.1.1");
             
-            showMenuItem("1", "📋", "Listar produtos", "", GREEN);
-            showMenuItem("2", "➕", "Criar novo produto", "", YELLOW);
-            showMenuItem("0", "⬅️", "Voltar para tela 1.1.0", "", CYAN);
+            showMenuItem("1", "📋", "Listar produtos", "");
+            showMenuItem("2", "➕", "Criar novo produto", "");
+            showMenuItem("0", "⬅️", "Voltar para tela 1.1.0", "");
             
             showFooter();
             showInputPrompt("Escolha uma opção: ");

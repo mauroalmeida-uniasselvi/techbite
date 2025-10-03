@@ -13,9 +13,9 @@ public class Screen110 extends ScreenMain {
         while (true) {
             showHeader("Cadastros v1.1.0");
             
-            showMenuItem("1", "👥", "Clientes", "listar / criar / buscar", YELLOW);
-            showMenuItem("2", "📦", "Produtos", "listar / criar / ajustar estoque", GREEN);
-            showMenuItem("0", "⬅️", "Voltar", "", CYAN);
+            showMenuItem("1", "👥", "Clientes", "listar / criar / buscar");
+            showMenuItem("2", "📦", "Produtos", "listar / criar / ajustar estoque");
+            showMenuItem("0", "⬅️", "Voltar", "");
             
             showFooter();
             showInputPrompt("Escolha uma opção: ");

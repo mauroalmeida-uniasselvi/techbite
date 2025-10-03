@@ -29,10 +29,10 @@ public class Screen121 extends ScreenMain {
         while (true) {
             showHeader("Criação de Pedido v1.2.1");
             
-            showMenuItem("1", "📋", "Listar produtos disponíveis", "", BLUE);
-            showMenuItem("2", "➕", "Adicionar produto ao pedido", "", GREEN);
-            showMenuItem("3", "🛒", "Ver itens do pedido", "", YELLOW);
-            showMenuItem("4", "💳", "Efetuar pagamento", "", PURPLE);
+            showMenuItem("1", "📋", "Listar produtos disponíveis", "");
+            showMenuItem("2", "➕", "Adicionar produto ao pedido", "");
+            showMenuItem("3", "🛒", "Ver itens do pedido", "");
+            showMenuItem("4", "💳", "Efetuar pagamento", "");
             System.out.println("0. Voltar");
             System.out.print("Escolha uma opcao: ");
 

@@ -44,7 +44,17 @@ public abstract class ScreenMain {
         System.out.println(CYAN + "╚════════════════════════════════════════════════════════════════╝" + RESET);
     }
 
-    protected void showMenuItem(String number, String icon, String title, String description, String color) {
+    protected void showMenuItem(String number, String icon, String title, String description) {
+        // Automatic color selection based on menu number
+        String color = switch (number) {
+            case "1" -> YELLOW;
+            case "2" -> GREEN;
+            case "3" -> BLUE;
+            case "4" -> PURPLE;
+            case "5" -> CYAN;
+            default -> YELLOW;
+        };
+        
         System.out.println(color + "║  [" + number + "] " + icon + " " + title + RESET + 
                          (description != null && !description.isEmpty() ? " — " + description : ""));
     }

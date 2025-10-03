@@ -13,13 +13,13 @@ public class Screen100 extends ScreenMain {
         while (true) {
             showHeader("Sistema de Gestão v1.0.0");
             
-            // Menu principal com cores e ícones
-            showMenuItem("1", "⚙️", "Gerenciamento", "cadastros de clientes e produtos", YELLOW);
-            showMenuItem("2", "📋", "Pedidos", "criar, listar e editar pedidos", GREEN);
-            showMenuItem("3", "💰", "Pagamentos", "registrar e listar pagamentos", BLUE);
-            showMenuItem("4", "📄", "Notas fiscais", "gerar e consultar notas", PURPLE);
-            showMenuItem("5", "📊", "Relatórios", "relatórios básicos", CYAN);
-            showMenuItem("0", "🚪", "Sair", "", YELLOW);
+            // Menu principal com ícones
+            showMenuItem("1", "⚙️", "Gerenciamento", "cadastros de clientes e produtos");
+            showMenuItem("2", "📋", "Pedidos", "criar, listar e editar pedidos");
+            showMenuItem("3", "💰", "Pagamentos", "registrar e listar pagamentos");
+            showMenuItem("4", "📄", "Notas fiscais", "gerar e consultar notas");
+            showMenuItem("5", "📊", "Relatórios", "relatórios básicos");
+            showMenuItem("0", "🚪", "Sair", "");
             
             showFooter();
             showInputPrompt("Escolha uma opção: ");
