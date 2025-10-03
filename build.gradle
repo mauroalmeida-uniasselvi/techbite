@@ -1,0 +1,25 @@
+plugins {
+    id 'application'
+    id 'java'
+}
+
+group = 'techbite'
+version = '1.0-SNAPSHOT'
+
+sourceCompatibility = '21'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+application {
+    mainClass = 'techbite.App'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Nenhuma dependência externa necessária
+}
