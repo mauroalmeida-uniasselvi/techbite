@@ -17,17 +17,22 @@ import techbite.service.PagamentoPix;
  * - Ver itens do pedido
  * - Efetuar pagamento (simulado)
  */
-public class Screen121 {
-
+public class Screen121 extends ScreenMain {
+    private static final Screen121 instance = new Screen121();
     private static final List<String> cart = new ArrayList<>();
 
     public static void show(Scanner scanner) {
+        instance.showMenu(scanner);
+    }
+    
+    private void showMenu(Scanner scanner) {
         while (true) {
-            System.out.println("\n--- Tela 1.2.1 - Formulário de Criação de Pedido ---");
-            System.out.println("1. Listar produtos disponíveis");
-            System.out.println("2. Adicionar produto ao pedido");
-            System.out.println("3. Ver itens do pedido");
-            System.out.println("4. Efetuar pagamento");
+            showHeader("Criação de Pedido v1.2.1");
+            
+            showMenuItem("1", "📋", "Listar produtos disponíveis", "");
+            showMenuItem("2", "➕", "Adicionar produto ao pedido", "");
+            showMenuItem("3", "🛒", "Ver itens do pedido", "");
+            showMenuItem("4", "💳", "Efetuar pagamento", "");
             System.out.println("0. Voltar");
             System.out.print("Escolha uma opcao: ");
 

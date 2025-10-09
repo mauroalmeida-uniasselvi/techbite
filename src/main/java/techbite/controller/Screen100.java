@@ -2,18 +2,27 @@ package techbite.controller;
 
 import java.util.Scanner;
 
-public class Screen100 {
-
+public class Screen100 extends ScreenMain {
+    private static final Screen100 instance = new Screen100();
+    
     public static void show(Scanner scanner) {
+        instance.showMenu(scanner);
+    }
+    
+    private void showMenu(Scanner scanner) {
         while (true) {
-            System.out.println("\n--- Tela Inicial 1.0.0 ---");
-            System.out.println("1. Gerenciamento — cadastros de clientes e produtos");
-            System.out.println("2. Pedidos — criar, listar e editar pedidos");
-            System.out.println("3. Pagamentos — registrar e listar pagamentos");
-            System.out.println("4. Notas fiscais — gerar e consultar notas");
-            System.out.println("5. Relatorios — relatórios básicos");
-            System.out.println("0. Sair");
-            System.out.print("Escolha uma opcao: ");
+            showHeader("Sistema de Gestão v1.0.0");
+            
+            // Menu principal com ícones
+            showMenuItem("1", "⚙️", "Gerenciamento", "cadastros de clientes e produtos");
+            showMenuItem("2", "📋", "Pedidos", "criar, listar e editar pedidos");
+            showMenuItem("3", "💰", "Pagamentos", "registrar e listar pagamentos");
+            showMenuItem("4", "📄", "Notas fiscais", "gerar e consultar notas");
+            showMenuItem("5", "📊", "Relatórios", "relatórios básicos");
+            showMenuItem("0", "🚪", "Sair", "");
+            
+            showFooter();
+            showInputPrompt("Escolha uma opção: ");
 
             String input = scanner.nextLine().trim();
             switch (input) {
