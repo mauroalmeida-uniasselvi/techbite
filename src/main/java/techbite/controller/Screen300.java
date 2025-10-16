@@ -23,8 +23,10 @@ public class Screen300 extends ScreenMain {
             String input = scanner.nextLine().trim();
             switch (input) {
                 case "1":
+                    Screen310.show(scanner);
                     break;
                 case "2":
+                    Screen320.show(scanner);
                     break;
                 case "0":
                     return;

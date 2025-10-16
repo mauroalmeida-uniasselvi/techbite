@@ -20,12 +20,10 @@ public class Screen100 extends ScreenMain {
             String input = scanner.nextLine().trim();
             switch (input) {
                 case "1":
-                    // TODO: Implementar criação de usuário
-                    System.out.println("Funcionalidade de criação de usuário ainda não implementada.");
+                    Screen110.show(scanner);
                     break;
                 case "2":
-                    // TODO: Implementar listagem de usuários
-                    System.out.println("Funcionalidade de listagem de usuários ainda não implementada.");
+                    Screen120.show(scanner);
                     break;
                 case "0":
                     return;
