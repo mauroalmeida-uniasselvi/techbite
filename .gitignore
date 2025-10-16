@@ -6,6 +6,12 @@ yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
 
+
+
+.gradle/9.1.0/executionHistory/executionHistory.lock
+.gradle/9.1.0/fileHashes/fileHashes.lock
+.gradle/buildOutputCleanup/buildOutputCleanup.lock
+.gradle/file-system.probe
 .gradle/
 .gradle/**
 build/
