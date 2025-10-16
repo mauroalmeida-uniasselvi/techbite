@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/src/main/java/techbite/App.java">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/src/main/java/techbite/App.java" />
+              <option name="originalContent" value="package techbite;&#10;&#10;&#10;import techbite.controller.*;&#10;&#10;import java.util.*;&#10;&#10;public class App {&#10;    static void main() {&#10;        try (Scanner scanner = new Scanner(System.in)) {&#10;            Screen100.show(scanner);&#10;        } catch (Exception e) {&#10;            e.fillInStackTrace();&#10;        }&#10;    }&#10;}" />
+              <option name="updatedContent" value="package techbite;&#10;&#10;&#10;import techbite.controller.*;&#10;&#10;import java.util.*;&#10;&#10;public class App {&#10;    static void main() {&#10;        try (Scanner scanner = new Scanner(System.in)) {&#10;            Screen100.show(scanner);&#10;        } catch (Exception e) {&#10;            e.fillInStackTrace();&#10;        }&#10;    }&#10;}" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
