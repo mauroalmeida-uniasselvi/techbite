@@ -1,4 +1,4 @@
 package techbite.service;
 
-public interface ClienteService {
+public interface IClienteService {
 }

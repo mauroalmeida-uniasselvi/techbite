@@ -1,6 +1,6 @@
 
 package techbite.service;
 
-public interface NotaFiscalService {
+public interface INotaFiscalService {
     void emitir();
 }

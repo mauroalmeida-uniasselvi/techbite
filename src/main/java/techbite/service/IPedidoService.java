@@ -1,4 +1,4 @@
 package techbite.service;
 
-public interface PedidoService {
+public interface IPedidoService {
 }
