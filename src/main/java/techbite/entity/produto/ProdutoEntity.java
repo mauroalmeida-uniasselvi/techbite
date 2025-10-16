@@ -1,6 +1,6 @@
 package techbite.entity.produto;
 
-public record Produto(String nome, double preco) {
+public record ProdutoEntity(String nome, double preco) {
 
     @Override
     public String toString() {

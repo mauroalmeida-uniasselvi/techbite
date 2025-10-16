@@ -1,18 +1,16 @@
-package techbite.entity;
+package techbite.entity.cliente;
 
 public abstract class Cliente {
     private final ClienteEntity cliente;
-    private final TipoCliente tipo;
     private final double desconto;
 
-    public Cliente(ClienteEntity cliente, TipoCliente tipo) {
+    public Cliente(ClienteEntity cliente) {
         this.cliente = cliente;
-        this.tipo = tipo;
         this.desconto = definirDesconto();
     }
 
     private double definirDesconto() {
-        return switch (tipo) {
+        return switch (cliente.tipo()) {
             case COMUM -> 0.0;
             case ASSOCIADO -> 0.1;
             case FUNCIONARIO -> 0.2;
@@ -27,12 +25,12 @@ public abstract class Cliente {
         return cliente.nome();
     }
 
-    public double getDesconto() {
-        return desconto;
+    public techbite.entity.cliente.TipoCliente getTipo() {
+        return cliente.tipo();
     }
 
-    public TipoCliente getTipo() {
-        return tipo;
+    public double getDesconto() {
+        return desconto;
     }
 
 

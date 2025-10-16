@@ -1,21 +1,18 @@
 
 package techbite;
 
-import techbite.entity.Cliente;
-import techbite.entity.ClienteComum;
-import techbite.entity.ClienteAssociado;
-import techbite.entity.Produto;
-// import techbite.service.Pagamento;
-import techbite.service.Pedido;
-
-import java.util.*;
+import techbite.entity.cliente.Cliente;
+import techbite.entity.cliente.ClienteComum;
+import techbite.entity.cliente.ClienteAssociado;
+// import techbite.service.pagamento.Pagamento;
+import techbite.service.pedido.Pedido;
 
 public class Index {
     public static void main(String[] args) {
-        Produto cafe = new Produto("Café", 5);
-        Produto refrigerante = new Produto("Refrigerante", 4.5);
-        Produto paoovo = new Produto("Pão com Ovo", 8.75);
-        Produto xmonstro = new Produto("X-Monstro", 12.5);
+        techbite.entity.produto.ProdutoEntity cafe = new techbite.entity.produto.ProdutoEntity("Café", 5);
+        techbite.entity.produto.ProdutoEntity refrigerante = new techbite.entity.produto.ProdutoEntity("Refrigerante", 4.5);
+        techbite.entity.produto.ProdutoEntity paoovo = new techbite.entity.produto.ProdutoEntity("Pão com Ovo", 8.75);
+        techbite.entity.produto.ProdutoEntity xmonstro = new techbite.entity.produto.ProdutoEntity("X-Monstro", 12.5);
 
         // Clientes
         Cliente cliente1 = new ClienteComum("12345678901", "João da Silva");

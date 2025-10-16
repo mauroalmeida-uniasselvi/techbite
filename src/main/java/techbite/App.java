@@ -1,16 +1,16 @@
 package techbite;
 
 
-import techbite.controller.Screen100;
+import techbite.controller.*;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class App {
-    public static void main(String[] args) {
+    static void main() {
         try (Scanner scanner = new Scanner(System.in)) {
             Screen100.show(scanner);
         } catch (Exception e) {
-            e.printStackTrace();
+            e.fillInStackTrace();
         }
     }
 }

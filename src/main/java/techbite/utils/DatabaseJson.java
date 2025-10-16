@@ -1,25 +1,22 @@
 package techbite.utils;
 
-import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
+import java.io.*;
+import java.nio.file.*;
+import java.util.*;
+import java.util.stream.*;
 
 /**
  * Local JSON-backed database that composes JsonFile for low-level read/write
  * and provides CRUD operations on top of JSON arrays.
  */
-public class DatabaseLocal implements techbite.entity.Database {
+public class DatabaseJson implements techbite.entity.Database {
     private final JsonFile jsonFile;
 
-    public DatabaseLocal() throws IOException {
+    public DatabaseJson() throws IOException {
         this(resolveBaseDir());
     }
 
-    public DatabaseLocal(Path baseDir) throws IOException {
+    public DatabaseJson(Path baseDir) throws IOException {
         this.jsonFile = new JsonFile(baseDir);
     }
 
@@ -33,7 +30,7 @@ public class DatabaseLocal implements techbite.entity.Database {
 
     // CRUD operations using Identifiable
     @Override
-    public <T extends techbite.entity.Identifiable> T create(String fileName, Class<T> type, T entity) throws IOException {
+    public <T extends techbite.entity.Identifiable> void create(String fileName, Class<T> type, T entity) throws IOException {
         List<T> all = new ArrayList<>(jsonFile.loadList(type, fileName));
         boolean replaced = false;
         for (int i = 0; i < all.size(); i++) {
@@ -45,7 +42,6 @@ public class DatabaseLocal implements techbite.entity.Database {
         }
         if (!replaced) all.add(entity);
         jsonFile.saveList(all, fileName);
-        return entity;
     }
 
     @Override

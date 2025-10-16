@@ -1,7 +1,7 @@
 package techbite.controller;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import java.time.*;
+import java.time.format.*;
 
 public abstract class ScreenMain {
     // Cores ANSI
@@ -11,6 +11,7 @@ public abstract class ScreenMain {
     protected static final String YELLOW = "\u001B[33m";
     protected static final String GREEN = "\u001B[32m";
     protected static final String PURPLE = "\u001B[35m";
+    protected static final String WHITE = "\u001B[37m";
 
     protected static void clearScreen() {
         System.out.print("\033[H\033[2J");
@@ -20,23 +21,22 @@ public abstract class ScreenMain {
     protected void showHeader(String title) {
         clearScreen();
         String currentTime = LocalDateTime.now().atZone(java.time.ZoneId.of("America/Sao_Paulo")).format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
-        
-        // Logo ASCII Art
-        System.out.println(BLUE + """
-            ╔════════════════════════════════════════════════════════════════╗
-            ║  ████████╗███████╗ ██████╗██╗  ██╗██████╗ ██╗████████╗███████╗║
-            ║  ╚══██╔══╝██╔════╝██╔════╝██║  ██║██╔══██╗██║╚══██╔══╝██╔════╝║
-            ║     ██║   █████╗  ██║     ███████║██████╔╝██║   ██║   █████╗  ║
-            ║     ██║   ██╔══╝  ██║     ██╔══██║██╔══██╗██║   ██║   ██╔══╝  ║
-            ║     ██║   ███████╗╚██████╗██║  ██║██████╔╝██║   ██║   ███████╗║
-            ║     ╚═╝   ╚══════╝ ╚═════╝╚═╝  ╚═╝╚═════╝ ╚═╝   ╚═╝   ╚══════╝║
-            ╚════════════════════════════════════════════════════════════════╝
-            """ + RESET);
 
-        // Cabeçalho com data e hora
+        // Logo ASCII Art
+        System.out.println(WHITE + """
+                ╔════════════════════════════════════════════════════════════════╗
+                ║  ████████╗███████╗ ██████╗██╗  ██╗██████╗ ██╗████████╗███████╗║
+                ║  ╚══██╔══╝██╔════╝██╔════╝██║  ██║██╔══██╗██║╚══██╔══╝██╔════╝║
+                ║     ██║   █████╗  ██║     ███████║██████╔╝██║   ██║   █████╗  ║
+                ║     ██║   ██╔══╝  ██║     ██╔══██║██╔══██╗██║   ██║   ██╔══╝  ║
+                ║     ██║   ███████╗╚██████╗██║  ██║██████╔╝██║   ██║   ███████╗║
+                ║     ╚═╝   ╚══════╝ ╚═════╝╚═╝  ╚═╝╚═════╝ ╚═╝   ╚═╝   ╚══════╝║
+                ╚════════════════════════════════════════════════════════════════╝
+                """ + RESET);
+
         System.out.println(CYAN + "╔════════════════════════════════════════════════════════════════╗");
-        System.out.println("║                  " + centerText(title, 48) + "                  ║");
-        System.out.println("║                    " + currentTime + "                    ║");
+        System.out.println("             " + title + "                   ");
+        System.out.println("             " + currentTime + "                          ");
         System.out.println("╠════════════════════════════════════════════════════════════════╣" + RESET);
     }
 
@@ -52,11 +52,10 @@ public abstract class ScreenMain {
             case "3" -> BLUE;
             case "4" -> PURPLE;
             case "5" -> CYAN;
-            default -> YELLOW;
+            default -> WHITE;
         };
-        
-        System.out.println(color + "║  [" + number + "] " + icon + " " + title + RESET + 
-                         (description != null && !description.isEmpty() ? " — " + description : ""));
+
+        System.out.println(color + "   [" + number + "] " + icon + "  " + title + RESET + (description != null && !description.isEmpty() ? " — " + description : ""));
     }
 
     private String centerText(String text, int width) {

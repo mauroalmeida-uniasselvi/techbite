@@ -7,23 +7,23 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProdutosRepository {
+public class ProdutoRepository {
     private final JsonFile json;
 
-    public ProdutosRepository(JsonFile json) {
+    public ProdutoRepository(JsonFile json) {
         this.json = json;
     }
 
-    public ProdutosRepository() throws IOException {
+    public ProdutoRepository() throws IOException {
         this(new JsonFile());
     }
 
-    public List<Produto> findAll() throws IOException {
-        List<Produto> list = json.loadList(Produto.class, DataFiles.PRODUTOS);
+    public List<ProdutoEntity> findAll() throws IOException {
+        List<ProdutoEntity> list = json.loadList(ProdutoEntity.class, DataFiles.PRODUTO);
         return list == null ? new ArrayList<>() : list;
     }
 
-    public void saveAll(List<Produto> produtos) throws IOException {
-        json.saveList(produtos, DataFiles.PRODUTOS);
+    public void saveAll(List<ProdutoEntity> produtos) throws IOException {
+        json.saveList(produtos, DataFiles.PRODUTO);
     }
 }

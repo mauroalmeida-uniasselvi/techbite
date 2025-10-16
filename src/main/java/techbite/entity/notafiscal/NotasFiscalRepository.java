@@ -8,14 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class NotasFiscaisRepository {
+public class NotasFiscalRepository {
     private final Database db;
 
-    public NotasFiscaisRepository(Database db) {
+    public NotasFiscalRepository(Database db) {
         this.db = db;
     }
 
-    public NotasFiscaisRepository() throws IOException {
+    public NotasFiscalRepository() throws IOException {
         this(new techbite.utils.DatabaseJson());
     }
 

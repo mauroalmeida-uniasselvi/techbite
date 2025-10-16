@@ -1,27 +1,23 @@
 package techbite.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.io.IOException;
+import java.util.*;
 
 public class Screen111 extends ScreenMain {
     private static final Screen111 instance = new Screen111();
-    
-    // Simple in-memory product list for demo purposes
-    private static final List<String> products = new ArrayList<>();
 
     public static void show(Scanner scanner) {
         instance.showMenu(scanner);
     }
-    
+
     private void showMenu(Scanner scanner) {
         while (true) {
-            showHeader("Cadastro de Produtos v1.1.1");
-            
+            showHeader("[1.1.1] Cadastro de Produtos");
+
             showMenuItem("1", "📋", "Listar produtos", "");
             showMenuItem("2", "➕", "Criar novo produto", "");
             showMenuItem("0", "⬅️", "Voltar para tela 1.1.0", "");
-            
+
             showFooter();
             showInputPrompt("Escolha uma opção: ");
 
@@ -43,31 +39,61 @@ public class Screen111 extends ScreenMain {
 
     private void listProducts() {
         showHeader("Lista de Produtos");
-        if (products.isEmpty()) {
-            showInfo("Nenhum produto cadastrado.");
-            return;
+        try {
+            var repo = new techbite.entity.produto.ProdutoRepository();
+            List<techbite.entity.produto.ProdutoEntity> produtos = repo.findAll();
+            if (produtos.isEmpty()) {
+                showInfo("Nenhum produto cadastrado.");
+                return;
+            }
+            for (int i = 0; i < produtos.size(); i++) {
+                System.out.println(BLUE + String.format("  %d. %s - R$ %.2f", i + 1, produtos.get(i).nome(), produtos.get(i).preco()) + RESET);
+            }
+            showFooter();
+        } catch (IOException e) {
+            showError("Falha ao carregar produtos: " + e.getMessage());
         }
-        for (int i = 0; i < products.size(); i++) {
-            System.out.println(BLUE + String.format("  %d. %s", i + 1, products.get(i)) + RESET);
-        }
-        showFooter();
     }
 
     private void createProduct(Scanner scanner) {
-        showInputPrompt("Nome do produto: ");
-        String name = scanner.nextLine().trim();
-        if (name.isEmpty()) {
-            System.out.println("Nome invalido. Cancelando.");
-            return;
+        try {
+            showInputPrompt("Nome do produto: ");
+            String name = scanner.nextLine().trim();
+            if (name.isEmpty()) {
+                System.out.println("Nome invalido. Cancelando.");
+                return;
+            }
+            showInputPrompt("Preco (ex: 12.50): ");
+            String precoStr = scanner.nextLine().trim();
+            double preco;
+            try {
+                preco = Double.parseDouble(precoStr.replace(',', '.'));
+            } catch (NumberFormatException nfe) {
+                showError("Preco invalido.");
+                return;
+            }
+            var repo = new techbite.entity.produto.ProdutoRepository();
+            List<techbite.entity.produto.ProdutoEntity> produtos = repo.findAll();
+            produtos.add(new techbite.entity.produto.ProdutoEntity(name, preco));
+            repo.saveAll(produtos);
+            System.out.println("Produto '" + name + "' criado com sucesso.");
+        } catch (IOException e) {
+            showError("Falha ao salvar produto: " + e.getMessage());
         }
-        products.add(name);
-        System.out.println("Produto '" + name + "' criado com sucesso.");
     }
 
     /**
-     * Retorna uma cópia da lista de produtos cadastrados.
+     * Retorna uma lista com os nomes dos produtos cadastrados (compatibilidade).
      */
     public static java.util.List<String> getProducts() {
-        return new java.util.ArrayList<>(products);
+        try {
+            var repo = new techbite.entity.produto.ProdutoRepository();
+            List<techbite.entity.produto.ProdutoEntity> produtos = repo.findAll();
+            List<String> nomes = new ArrayList<>();
+            for (techbite.entity.produto.ProdutoEntity p : produtos) nomes.add(p.nome());
+            return nomes;
+        } catch (IOException e) {
+            return new ArrayList<>();
+        }
     }
 }

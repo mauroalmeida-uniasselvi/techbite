@@ -1,6 +1,6 @@
 package techbite.controller;
 
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Tela 1.3.0 - Pagamentos
@@ -11,15 +11,15 @@ public class Screen130 extends ScreenMain {
     public static void show(Scanner scanner) {
         instance.showMenu(scanner);
     }
-    
+
     private void showMenu(Scanner scanner) {
         while (true) {
-            showHeader("Pagamentos v1.3.0");
-            
+            showHeader("[1.3.0] Pagamentos");
+
             showMenuItem("1", "💰", "Registrar pagamento", "escolher forma e confirmar");
             showMenuItem("2", "📋", "Listar pagamentos", "histórico");
             showMenuItem("0", "⬅️", "Voltar", "");
-            
+
             showFooter();
             showInputPrompt("Escolha uma opção: ");
 

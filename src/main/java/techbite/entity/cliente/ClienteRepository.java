@@ -6,40 +6,39 @@ import techbite.utils.*;
 import java.io.*;
 import java.util.*;
 
-public class ClientesRepository {
+public class ClienteRepository {
     private final Database db;
 
-    public ClientesRepository(Database db) {
+    public ClienteRepository(Database db) {
         this.db = db;
     }
 
-    public ClientesRepository() throws IOException {
+    public ClienteRepository() throws IOException {
         this(new techbite.utils.DatabaseJson());
     }
 
-    public List<ClientePersistEntity> findAll() throws IOException {
-        List<ClientePersistEntity> list = db.listAll(DataFiles.CLIENTES, ClientePersistEntity.class);
+    public List<ClienteEntity> findAll() throws IOException {
+        List<ClienteEntity> list = db.listAll(DataFiles.CLIENTE, ClienteEntity.class);
         return list == null ? new ArrayList<>() : list;
     }
 
-    // CRUD convenience
-    public void create(ClientePersistEntity entity) throws IOException {
-        db.create(DataFiles.CLIENTES, ClientePersistEntity.class, entity);
+    public void create(ClienteEntity entity) throws IOException {
+        db.create(DataFiles.CLIENTE, ClienteEntity.class, entity);
     }
 
-    public Optional<ClientePersistEntity> getById(String cpf) throws IOException {
-        return db.getById(DataFiles.CLIENTES, ClientePersistEntity.class, cpf);
+    public Optional<ClienteEntity> getById(String cpf) throws IOException {
+        return db.getById(DataFiles.CLIENTE, ClienteEntity.class, cpf);
     }
 
-    public List<ClientePersistEntity> listAll() throws IOException {
-        return db.listAll(DataFiles.CLIENTES, ClientePersistEntity.class);
+    public List<ClienteEntity> listAll() throws IOException {
+        return db.listAll(DataFiles.CLIENTE, ClienteEntity.class);
     }
 
-    public ClientePersistEntity update(ClientePersistEntity entity) throws IOException {
-        return db.update(DataFiles.CLIENTES, ClientePersistEntity.class, entity);
+    public ClienteEntity update(ClienteEntity entity) throws IOException {
+        return db.update(DataFiles.CLIENTE, ClienteEntity.class, entity);
     }
 
     public boolean delete(String cpf) throws IOException {
-        return db.delete(DataFiles.CLIENTES, ClientePersistEntity.class, cpf);
+        return db.delete(DataFiles.CLIENTE, ClienteEntity.class, cpf);
     }
 }

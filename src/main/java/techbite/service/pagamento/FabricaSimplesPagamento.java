@@ -1,21 +1,17 @@
 
-package techbite.service;
+package techbite.service.pagamento;
 
-import techbite.service.Pagamento;
-import techbite.service.PagamentoCartao;
-import techbite.service.PagamentoDinheiro;
-import techbite.service.PagamentoPix;
-import techbite.entity.TipoPagamento;
+import techbite.entity.pagamento.TipoPagamento;
 
 public class FabricaSimplesPagamento {
-    public static Pagamento criarPagamento(TipoPagamento tipo) {
+    public static techbite.service.pagamento.Pagamento criarPagamento(TipoPagamento tipo) {
         switch (tipo) {
             case CARTAO:
-                return new PagamentoCartao();
+                return new techbite.service.pagamento.PagamentoCartao();
             case PIX:
-                return new PagamentoPix();
+                return new techbite.service.pagamento.PagamentoPix();
             default:
-                return new PagamentoDinheiro();
+                return new techbite.service.pagamento.PagamentoDinheiro();
         }
     }
 }

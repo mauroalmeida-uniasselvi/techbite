@@ -1,7 +1,5 @@
 
-package techbite.service;
-
-import techbite.service.Pagamento;
+package techbite.service.pagamento;
 
 public class PagamentoCartao implements Pagamento {
     @Override

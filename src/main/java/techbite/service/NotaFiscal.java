@@ -1,7 +1,5 @@
 
-package techbite.service.notafiscal;
-
-// Nenhum import necessário
+package techbite.service;
 
 public interface NotaFiscal {
     void emitir();

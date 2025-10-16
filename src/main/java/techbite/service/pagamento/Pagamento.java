@@ -1,5 +1,5 @@
 
-package techbite.service;
+package techbite.service.pagamento;
 
 // Nenhum import necessário
 
