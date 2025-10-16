@@ -1,6 +1,6 @@
 package techbite.controller;
 
-import java.util.Scanner;
+import java.util.*;
 
 /**
  * Tela 1.4.0 - Notas fiscais
@@ -11,15 +11,15 @@ public class Screen140 extends ScreenMain {
     public static void show(Scanner scanner) {
         instance.showMenu(scanner);
     }
-    
+
     private void showMenu(Scanner scanner) {
         while (true) {
-            showHeader("Notas Fiscais v1.4.0");
-            
+            showHeader("[1.4.0] Notas Fiscais");
+
             showMenuItem("1", "📄", "Listar notas", "consultar por pedido");
             showMenuItem("2", "✨", "Gerar nota", "para pedido pago");
             showMenuItem("0", "⬅️", "Voltar", "");
-            
+
             showFooter();
             showInputPrompt("Escolha uma opção: ");
 
