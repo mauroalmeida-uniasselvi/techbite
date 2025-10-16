@@ -11,27 +11,17 @@ public class Screen110 extends ScreenMain {
 
     private void showMenu(Scanner scanner) {
         while (true) {
-            showHeader("[1.1.0] Cadastros");
-
-            showMenuItem("1", "👥", "Clientes", "listar / criar / buscar");
-            showMenuItem("2", "📦", "Produtos", "listar / criar / ajustar estoque");
+            showHeader("[1.1.0] Criar novo usuário");
             showMenuItem("0", "⬅️", "Voltar", "");
-
             showFooter();
             showInputPrompt("Escolha uma opção: ");
-
             String input = scanner.nextLine().trim();
             switch (input) {
-                case "1":
-                    System.out.println("Funcao 'Clientes' ainda nao implementada.");
-                    break;
-                case "2":
-                    Screen111.show(scanner);
-                    break;
                 case "0":
-                    return; // volta para Screen100
+                    
+                    return;
                 default:
-                    System.out.println("Opcao invalida. Tente novamente.");
+                    System.out.println("Opção inválida. Tente novamente.");
             }
         }
     }

@@ -3,10 +3,10 @@ package techbite.controller;
 import java.util.*;
 
 /**
- * Tela 1.2.0 - Pedidos
+ * Screen 4.0.0 - Relatórios
  */
-public class Screen120 extends ScreenMain {
-    private static final Screen120 instance = new Screen120();
+public class Screen400 extends ScreenMain {
+    private static final Screen400 instance = new Screen400();
 
     public static void show(Scanner scanner) {
         instance.showMenu(scanner);
@@ -14,7 +14,7 @@ public class Screen120 extends ScreenMain {
 
     private void showMenu(Scanner scanner) {
         while (true) {
-            showHeader("[1.2.0] Listar usuários");
+            showHeader("[4.0.0] Relatórios");
             showMenuItem("0", "⬅️", "Voltar", "");
             showFooter();
             showInputPrompt("Escolha uma opção: ");
@@ -27,5 +27,4 @@ public class Screen120 extends ScreenMain {
             }
         }
     }
-
 }

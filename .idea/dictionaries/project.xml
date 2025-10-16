@@ -2,12 +2,19 @@
   <dictionary name="project">
     <words>
       <w>associado</w>
+      <w>básicos</w>
+      <w>cadastro</w>
       <w>clientes</w>
       <w>comum</w>
       <w>criado</w>
+      <w>criar</w>
       <w>definir</w>
+      <w>editar</w>
+      <w>escolha</w>
       <w>funcionario</w>
+      <w>listar</w>
       <w>notafiscal</w>
+      <w>opção</w>
       <w>pagamento</w>
       <w>pagamentos</w>
       <w>pedido</w>
@@ -15,6 +22,7 @@
       <w>produto</w>
       <w>produtos</w>
       <w>realizado</w>
+      <w>relatórios</w>
     </words>
   </dictionary>
 </component>

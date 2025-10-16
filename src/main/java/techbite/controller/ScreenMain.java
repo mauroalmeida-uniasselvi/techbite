@@ -58,14 +58,6 @@ public abstract class ScreenMain {
         System.out.println(color + "   [" + number + "] " + icon + "  " + title + RESET + (description != null && !description.isEmpty() ? " — " + description : ""));
     }
 
-    private String centerText(String text, int width) {
-        if (text.length() >= width) {
-            return text;
-        }
-        int padding = (width - text.length()) / 2;
-        return " ".repeat(padding) + text + " ".repeat(width - text.length() - padding);
-    }
-
     protected void showInputPrompt(String prompt) {
         System.out.print("\n" + prompt);
     }
