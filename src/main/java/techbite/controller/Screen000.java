@@ -11,14 +11,13 @@ public class Screen100 extends ScreenMain {
     
     private void showMenu(Scanner scanner) {
         while (true) {
-            showHeader("[1.0.0] Sistema de Gestão");
+            showHeader("[0.0.0] Menu Principal");
 
-            showMenuItem("1", "⚙️", "Gerenciamento", "cadastros de clientes e produtos");
-            showMenuItem("2", "📋", "Pedidos", "criar, listar e editar pedidos");
-            showMenuItem("3", "💰", "Pagamentos", "registrar e listar pagamentos");
-            showMenuItem("4", "📄", "Notas fiscais", "gerar e consultar notas");
-            showMenuItem("5", "📊", "Relatórios", "relatórios básicos");
-            showMenuItem("0", "🚪", "Sair", "");
+            showMenuItem("1", "👥", "Clientes", "cadastro básico");
+            showMenuItem("2", "�", "Produtos", "cadastro básico");
+            showMenuItem("3", "�", "Pedidos", "criar, listar e editar pedidos");
+            showMenuItem("4", "📊", "Relatórios", "relatórios básicos");
+            showMenuItem("5", "🚪", "Sair", "");
 
             showFooter();
             showInputPrompt("Escolha uma opção: ");
@@ -29,22 +28,19 @@ public class Screen100 extends ScreenMain {
                     Screen110.show(scanner);
                     break;
                 case "2":
-                    Screen120.show(scanner);
+                    Screen200.show(scanner);
                     break;
                 case "3":
-                    Screen130.show(scanner);
+                    Screen300.show(scanner);
                     break;
                 case "4":
-                    Screen140.show(scanner);
+                    Screen400.show(scanner);
                     break;
                 case "5":
-                    System.out.println("Funcao 'Relatorios' ainda nao implementada.");
-                    break;
-                case "0":
                     System.out.println("Saindo...");
                     return;
                 default:
-                    System.out.println("Opcao invalida. Tente novamente.");
+                    System.out.println("Opção inválida. Tente novamente.");
             }
         }
     }
