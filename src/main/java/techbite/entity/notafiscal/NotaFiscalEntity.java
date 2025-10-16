@@ -1,6 +1,5 @@
 package techbite.entity.notafiscal;
 
-import techbite.entity.Identifiable;
 import java.time.LocalDateTime;
 
 public record NotaFiscalEntity(
@@ -9,7 +8,7 @@ public record NotaFiscalEntity(
         String numero,
         double valor,
         LocalDateTime criadoEm
-) implements Identifiable {
+) implements techbite.entity.StorageID {
     @Override
     public String getId() { return id; }
 }

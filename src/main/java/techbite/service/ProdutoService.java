@@ -1,4 +1,4 @@
 package techbite.service;
 
-public interface Produto {
+public interface ProdutoService {
 }

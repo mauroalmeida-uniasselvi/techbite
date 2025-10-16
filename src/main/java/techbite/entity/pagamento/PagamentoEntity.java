@@ -1,7 +1,5 @@
 package techbite.entity.pagamento;
 
-import techbite.entity.*;
-
 import java.time.*;
 
 public record PagamentoEntity(
@@ -11,7 +9,7 @@ public record PagamentoEntity(
         java.math.BigDecimal valor,
         String status,
         LocalDateTime criadoEm
-) implements Identifiable {
+) implements techbite.entity.StorageID {
     @Override
     public String getId() {
         return id;

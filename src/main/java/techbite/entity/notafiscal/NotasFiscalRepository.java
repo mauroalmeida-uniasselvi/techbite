@@ -1,7 +1,6 @@
 package techbite.entity.notafiscal;
 
 import techbite.utils.DataFiles;
-import techbite.entity.Database;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,14 +8,14 @@ import java.util.List;
 import java.util.Optional;
 
 public class NotasFiscalRepository {
-    private final Database db;
+    private final techbite.entity.Storage db;
 
-    public NotasFiscalRepository(Database db) {
+    public NotasFiscalRepository(techbite.entity.Storage db) {
         this.db = db;
     }
 
     public NotasFiscalRepository() throws IOException {
-        this(new techbite.utils.DatabaseJson());
+        this(new techbite.utils.StorageJson());
     }
 
     public List<NotaFiscalEntity> findAll() throws IOException {

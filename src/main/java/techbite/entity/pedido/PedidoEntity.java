@@ -1,7 +1,5 @@
 package techbite.entity.pedido;
 
-import techbite.entity.*;
-
 import java.time.*;
 import java.util.*;
 
@@ -12,7 +10,7 @@ public record PedidoEntity(
         double total,
         boolean pago,
         LocalDateTime criadoEm
-) implements Identifiable {
+) implements techbite.entity.StorageID {
     @Override
     public String getId() {
         return id;

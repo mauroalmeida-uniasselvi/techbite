@@ -9,14 +9,14 @@ import java.util.stream.*;
  * Local JSON-backed database that composes JsonFile for low-level read/write
  * and provides CRUD operations on top of JSON arrays.
  */
-public class DatabaseJson implements techbite.entity.Database {
+public class StorageJson implements techbite.entity.Storage {
     private final JsonFile jsonFile;
 
-    public DatabaseJson() throws IOException {
+    public StorageJson() throws IOException {
         this(resolveBaseDir());
     }
 
-    public DatabaseJson(Path baseDir) throws IOException {
+    public StorageJson(Path baseDir) throws IOException {
         this.jsonFile = new JsonFile(baseDir);
     }
 
@@ -30,7 +30,7 @@ public class DatabaseJson implements techbite.entity.Database {
 
     // CRUD operations using Identifiable
     @Override
-    public <T extends techbite.entity.Identifiable> void create(String fileName, Class<T> type, T entity) throws IOException {
+    public <T extends techbite.entity.StorageID> void create(String fileName, Class<T> type, T entity) throws IOException {
         List<T> all = new ArrayList<>(jsonFile.loadList(type, fileName));
         boolean replaced = false;
         for (int i = 0; i < all.size(); i++) {
@@ -45,17 +45,17 @@ public class DatabaseJson implements techbite.entity.Database {
     }
 
     @Override
-    public <T extends techbite.entity.Identifiable> Optional<T> getById(String fileName, Class<T> type, String id) throws IOException {
+    public <T extends techbite.entity.StorageID> Optional<T> getById(String fileName, Class<T> type, String id) throws IOException {
         return jsonFile.loadList(type, fileName).stream().filter(e -> equalsId(e, id)).findFirst();
     }
 
     @Override
-    public <T extends techbite.entity.Identifiable> List<T> listAll(String fileName, Class<T> type) throws IOException {
+    public <T extends techbite.entity.StorageID> List<T> listAll(String fileName, Class<T> type) throws IOException {
         return jsonFile.loadList(type, fileName);
     }
 
     @Override
-    public <T extends techbite.entity.Identifiable> T update(String fileName, Class<T> type, T entity) throws IOException {
+    public <T extends techbite.entity.StorageID> T update(String fileName, Class<T> type, T entity) throws IOException {
         List<T> all = new ArrayList<>(jsonFile.loadList(type, fileName));
         boolean updated = false;
         for (int i = 0; i < all.size(); i++) {
@@ -73,7 +73,7 @@ public class DatabaseJson implements techbite.entity.Database {
     }
 
     @Override
-    public <T extends techbite.entity.Identifiable> boolean delete(String fileName, Class<T> type, String id) throws IOException {
+    public <T extends techbite.entity.StorageID> boolean delete(String fileName, Class<T> type, String id) throws IOException {
         List<T> all = jsonFile.loadList(type, fileName);
         int before = all.size();
         List<T> remaining = all.stream().filter(e -> !equalsId(e, id)).collect(Collectors.toList());
@@ -84,7 +84,7 @@ public class DatabaseJson implements techbite.entity.Database {
         return false;
     }
 
-    private boolean equalsId(techbite.entity.Identifiable e, String id) {
+    private boolean equalsId(techbite.entity.StorageID e, String id) {
         return e.getId() != null && e.getId().equals(id);
     }
 }

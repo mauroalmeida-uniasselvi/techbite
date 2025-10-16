@@ -1,20 +1,19 @@
 package techbite.entity.pagamento;
 
-import techbite.entity.*;
 import techbite.utils.*;
 
 import java.io.*;
 import java.util.*;
 
 public class PagamentoRepository {
-    private final Database db;
+    private final techbite.entity.Storage db;
 
-    public PagamentoRepository(Database db) {
+    public PagamentoRepository(techbite.entity.Storage db) {
         this.db = db;
     }
 
     public PagamentoRepository() throws IOException {
-        this(new techbite.utils.DatabaseJson());
+        this(new techbite.utils.StorageJson());
     }
 
     public List<PagamentoEntity> findAll() throws IOException {

@@ -1,4 +1,4 @@
 package techbite.service;
 
-public interface Pagamento {
+public interface PagamentoService {
 }

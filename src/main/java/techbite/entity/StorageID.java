@@ -1,6 +1,6 @@
 package techbite.entity;
 
-public interface Identifiable {
+public interface StorageID {
     String getId();
 }
 

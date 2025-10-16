@@ -1,7 +1,6 @@
 package techbite.entity.pedido;
 
 import techbite.utils.DataFiles;
-import techbite.entity.Database;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,14 +8,14 @@ import java.util.List;
 import java.util.Optional;
 
 public class PedidoRepository {
-    private final Database db;
+    private final techbite.entity.Storage db;
 
-    public PedidoRepository(Database db) {
+    public PedidoRepository(techbite.entity.Storage db) {
         this.db = db;
     }
 
     public PedidoRepository() throws IOException {
-        this(new techbite.utils.DatabaseJson());
+        this(new techbite.utils.StorageJson());
     }
 
     public List<PedidoEntity> findAll() throws IOException {
