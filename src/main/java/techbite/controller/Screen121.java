@@ -17,7 +17,7 @@ public class Screen121 extends ScreenMain {
         while (true) {
             showHeader("[1.2.1] Criação de Pedido");
 
-            showMenuItem("1", "🛍️", "Iniciar novo pedido", "cliente, itens e pagamento");
+            showMenuItem("1", "🛍️", "Iniciar novo pedido", "cliente, produtos e pagamento");
             showMenuItem("0", "🚪", "Voltar", "");
 
             showFooter();

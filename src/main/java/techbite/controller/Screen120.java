@@ -27,7 +27,7 @@ public class Screen120 extends ScreenMain {
             String input = scanner.nextLine().trim();
             switch (input) {
                 case "1":
-                    Screen121.criarPedido(scanner);
+                    Screen121.show(scanner);
                     break;
                 case "2":
                     System.out.println("Funcao 'Listar pedidos' ainda nao implementada.");
