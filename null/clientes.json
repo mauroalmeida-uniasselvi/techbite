@@ -1,5 +1,18 @@
-[ {
-  "cpf" : "99999999999",
-  "nome" : "Teste Atualizado",
-  "tipo" : "COMUM"
-} ]
+[
+  {
+    "cpf": "12345678900",
+    "nome": "João Silva",
+    "tipo": "COMUM"
+  },
+  {
+    "cpf": "98765432100",
+    "nome": "Maria Oliveira",
+    "tipo": "ASSOCIADO"
+  },
+  {
+    "cpf": "45678912300",
+    "nome": "Carlos Souza",
+    "tipo": "FUNCIONARIO"
+  }
+]
+

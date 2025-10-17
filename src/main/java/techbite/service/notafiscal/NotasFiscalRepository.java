@@ -1,4 +1,4 @@
-package techbite.entity.notafiscal;
+package techbite.service.notafiscal;
 
 import techbite.utils.DataFiles;
 
@@ -18,29 +18,29 @@ public class NotasFiscalRepository {
         this(new techbite.utils.StorageJson());
     }
 
-    public List<NotaFiscalEntity> findAll() throws IOException {
-        List<NotaFiscalEntity> list = db.listAll(DataFiles.NOTA_FISCAL, NotaFiscalEntity.class);
+    public List<techbite.entity.notafiscal.NotaFiscalEntity> findAll() throws IOException {
+        List<techbite.entity.notafiscal.NotaFiscalEntity> list = db.listAll(DataFiles.NOTA_FISCAL, techbite.entity.notafiscal.NotaFiscalEntity.class);
         return list == null ? new ArrayList<>() : list;
     }
 
     // CRUD convenience
-    public void create(NotaFiscalEntity entity) throws IOException {
-        db.create(DataFiles.NOTA_FISCAL, NotaFiscalEntity.class, entity);
+    public void create(techbite.entity.notafiscal.NotaFiscalEntity entity) throws IOException {
+        db.create(DataFiles.NOTA_FISCAL, techbite.entity.notafiscal.NotaFiscalEntity.class, entity);
     }
 
-    public Optional<NotaFiscalEntity> getById(String id) throws IOException {
-        return db.getById(DataFiles.NOTA_FISCAL, NotaFiscalEntity.class, id);
+    public Optional<techbite.entity.notafiscal.NotaFiscalEntity> getById(String id) throws IOException {
+        return db.getById(DataFiles.NOTA_FISCAL, techbite.entity.notafiscal.NotaFiscalEntity.class, id);
     }
 
-    public List<NotaFiscalEntity> listAll() throws IOException {
-        return db.listAll(DataFiles.NOTA_FISCAL, NotaFiscalEntity.class);
+    public List<techbite.entity.notafiscal.NotaFiscalEntity> listAll() throws IOException {
+        return db.listAll(DataFiles.NOTA_FISCAL, techbite.entity.notafiscal.NotaFiscalEntity.class);
     }
 
-    public NotaFiscalEntity update(NotaFiscalEntity entity) throws IOException {
-        return db.update(DataFiles.NOTA_FISCAL, NotaFiscalEntity.class, entity);
+    public techbite.entity.notafiscal.NotaFiscalEntity update(techbite.entity.notafiscal.NotaFiscalEntity entity) throws IOException {
+        return db.update(DataFiles.NOTA_FISCAL, techbite.entity.notafiscal.NotaFiscalEntity.class, entity);
     }
 
     public boolean delete(String id) throws IOException {
-        return db.delete(DataFiles.NOTA_FISCAL, NotaFiscalEntity.class, id);
+        return db.delete(DataFiles.NOTA_FISCAL, techbite.entity.notafiscal.NotaFiscalEntity.class, id);
     }
 }

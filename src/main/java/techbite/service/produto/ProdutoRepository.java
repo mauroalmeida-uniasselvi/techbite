@@ -1,4 +1,4 @@
-package techbite.entity.produto;
+package techbite.service.produto;
 
 import techbite.utils.DataFiles;
 import techbite.utils.JsonFile;
@@ -18,12 +18,12 @@ public class ProdutoRepository {
         this(new JsonFile());
     }
 
-    public List<ProdutoEntity> findAll() throws IOException {
-        List<ProdutoEntity> list = json.loadList(ProdutoEntity.class, DataFiles.PRODUTO);
+    public List<techbite.entity.produto.ProdutoEntity> findAll() throws IOException {
+        List<techbite.entity.produto.ProdutoEntity> list = json.loadList(techbite.entity.produto.ProdutoEntity.class, DataFiles.PRODUTO);
         return list == null ? new ArrayList<>() : list;
     }
 
-    public void saveAll(List<ProdutoEntity> produtos) throws IOException {
+    public void saveAll(List<techbite.entity.produto.ProdutoEntity> produtos) throws IOException {
         json.saveList(produtos, DataFiles.PRODUTO);
     }
 }

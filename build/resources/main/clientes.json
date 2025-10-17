@@ -1,2 +1,26 @@
-[]
-
+[ {
+  "cpf" : "12345678900",
+  "nome" : "João Pereira da Silva",
+  "tipo" : "COMUM",
+  "id" : "12345678900"
+}, {
+  "cpf" : "98765432100",
+  "nome" : "Maria Oliveira",
+  "tipo" : "ASSOCIADO",
+  "id" : "98765432100"
+}, {
+  "cpf" : "45678912300",
+  "nome" : "Carlos Souza",
+  "tipo" : "FUNCIONARIO",
+  "id" : "45678912300"
+}, {
+  "cpf" : "34567812345",
+  "nome" : "Andre Silva",
+  "tipo" : "ASSOCIADO",
+  "id" : "34567812345"
+}, {
+  "cpf" : "54678321234",
+  "nome" : "Maria da Graça",
+  "tipo" : "FUNCIONARIO",
+  "id" : "54678321234"
+} ]

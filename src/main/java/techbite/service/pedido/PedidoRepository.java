@@ -1,4 +1,4 @@
-package techbite.entity.pedido;
+package techbite.service.pedido;
 
 import techbite.utils.DataFiles;
 
@@ -18,29 +18,29 @@ public class PedidoRepository {
         this(new techbite.utils.StorageJson());
     }
 
-    public List<PedidoEntity> findAll() throws IOException {
-        List<PedidoEntity> list = db.listAll(DataFiles.PEDIDO, PedidoEntity.class);
+    public List<techbite.entity.pedido.PedidoEntity> findAll() throws IOException {
+        List<techbite.entity.pedido.PedidoEntity> list = db.listAll(DataFiles.PEDIDO, techbite.entity.pedido.PedidoEntity.class);
         return list == null ? new ArrayList<>() : list;
     }
 
     // CRUD convenience
-    public void create(PedidoEntity entity) throws IOException {
-        db.create(DataFiles.PEDIDO, PedidoEntity.class, entity);
+    public void create(techbite.entity.pedido.PedidoEntity entity) throws IOException {
+        db.create(DataFiles.PEDIDO, techbite.entity.pedido.PedidoEntity.class, entity);
     }
 
-    public Optional<PedidoEntity> getById(String id) throws IOException {
-        return db.getById(DataFiles.PEDIDO, PedidoEntity.class, id);
+    public Optional<techbite.entity.pedido.PedidoEntity> getById(String id) throws IOException {
+        return db.getById(DataFiles.PEDIDO, techbite.entity.pedido.PedidoEntity.class, id);
     }
 
-    public List<PedidoEntity> listAll() throws IOException {
-        return db.listAll(DataFiles.PEDIDO, PedidoEntity.class);
+    public List<techbite.entity.pedido.PedidoEntity> listAll() throws IOException {
+        return db.listAll(DataFiles.PEDIDO, techbite.entity.pedido.PedidoEntity.class);
     }
 
-    public PedidoEntity update(PedidoEntity entity) throws IOException {
-        return db.update(DataFiles.PEDIDO, PedidoEntity.class, entity);
+    public techbite.entity.pedido.PedidoEntity update(techbite.entity.pedido.PedidoEntity entity) throws IOException {
+        return db.update(DataFiles.PEDIDO, techbite.entity.pedido.PedidoEntity.class, entity);
     }
 
     public boolean delete(String id) throws IOException {
-        return db.delete(DataFiles.PEDIDO, PedidoEntity.class, id);
+        return db.delete(DataFiles.PEDIDO, techbite.entity.pedido.PedidoEntity.class, id);
     }
 }

@@ -12,8 +12,8 @@ public class Screen100 extends ScreenMain {
     private void showMenu(Scanner scanner) {
         while (true) {
             showHeader("[1.0.0] Clientes");
-            showMenuItem("1", "➕", "Criar novo usuário", "");
-            showMenuItem("2", "📋", "Listar usuários", "");
+            showMenuItem("1", "➕", "Criar novo cliente", "");
+            showMenuItem("2", "📋", "Listar clientes", "");
             showMenuItem("0", "⬅️", "Voltar", "");
             showFooter();
             showInputPrompt("Escolha uma opção: ");

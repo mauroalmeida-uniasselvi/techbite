@@ -1,2 +1,9 @@
-./gradlew build --quiet --no-daemon
-java -cp build/libs/techbite-1.1.0.jar techbite.App
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Build and install the application distribution (includes all runtime deps)
+./gradlew --quiet --no-daemon installDist
+
+# Run the generated start script so the classpath includes dependencies
+exec ./build/install/techbite/bin/techbite "$@"
+

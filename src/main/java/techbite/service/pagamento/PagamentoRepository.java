@@ -1,4 +1,4 @@
-package techbite.entity.pagamento;
+package techbite.service.pagamento;
 
 import techbite.utils.*;
 
@@ -16,30 +16,30 @@ public class PagamentoRepository {
         this(new techbite.utils.StorageJson());
     }
 
-    public List<PagamentoEntity> findAll() throws IOException {
-        List<PagamentoEntity> list = db.listAll(DataFiles.PAGAMENTO, PagamentoEntity.class);
+    public List<techbite.entity.pagamento.PagamentoEntity> findAll() throws IOException {
+        List<techbite.entity.pagamento.PagamentoEntity> list = db.listAll(DataFiles.PAGAMENTO, techbite.entity.pagamento.PagamentoEntity.class);
         return list == null ? new ArrayList<>() : list;
     }
 
 
     // CRUD convenience
-    public void create(PagamentoEntity entity) throws IOException {
-        db.create(DataFiles.PAGAMENTO, PagamentoEntity.class, entity);
+    public void create(techbite.entity.pagamento.PagamentoEntity entity) throws IOException {
+        db.create(DataFiles.PAGAMENTO, techbite.entity.pagamento.PagamentoEntity.class, entity);
     }
 
-    public Optional<PagamentoEntity> getById(String id) throws IOException {
-        return db.getById(DataFiles.PAGAMENTO, PagamentoEntity.class, id);
+    public Optional<techbite.entity.pagamento.PagamentoEntity> getById(String id) throws IOException {
+        return db.getById(DataFiles.PAGAMENTO, techbite.entity.pagamento.PagamentoEntity.class, id);
     }
 
-    public List<PagamentoEntity> listAll() throws IOException {
-        return db.listAll(DataFiles.PAGAMENTO, PagamentoEntity.class);
+    public List<techbite.entity.pagamento.PagamentoEntity> listAll() throws IOException {
+        return db.listAll(DataFiles.PAGAMENTO, techbite.entity.pagamento.PagamentoEntity.class);
     }
 
-    public PagamentoEntity update(PagamentoEntity entity) throws IOException {
-        return db.update(DataFiles.PAGAMENTO, PagamentoEntity.class, entity);
+    public techbite.entity.pagamento.PagamentoEntity update(techbite.entity.pagamento.PagamentoEntity entity) throws IOException {
+        return db.update(DataFiles.PAGAMENTO, techbite.entity.pagamento.PagamentoEntity.class, entity);
     }
 
     public boolean delete(String id) throws IOException {
-        return db.delete(DataFiles.PAGAMENTO, PagamentoEntity.class, id);
+        return db.delete(DataFiles.PAGAMENTO, techbite.entity.pagamento.PagamentoEntity.class, id);
     }
 }
