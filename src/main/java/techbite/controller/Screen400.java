@@ -30,7 +30,7 @@ public class Screen400 extends ScreenMain {
             showMenuItem("13", "📊", "ABC de estoque", "valor e giro");
             showMenuItem("14", "💳", "meios de pagamento", "mix e taxas");
             showMenuItem("15", "↩️", "devoluções", "taxa e motivos");
-            showMenuItem("0", "⬅️", "Voltar", "");
+            showMenuItem("0", "⬅️ ", "Voltar", "");
             showFooter();
             showInputPrompt("aguardando seleção do menu: ");
             String input = scanner.nextLine().trim();

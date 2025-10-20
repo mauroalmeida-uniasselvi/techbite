@@ -12,10 +12,10 @@ public class Screen000 extends ScreenMain {
     private void showMenu(Scanner scanner) {
         while (true) {
             showHeader("[0.0.0] Menu Principal");
-            showMenuItem("1", "👥", "Clientes", "cadastro básico");
-            showMenuItem("2", "📦", "Produtos", "cadastro básico");
-            showMenuItem("3", "🛒", "Pedidos", "criar, listar e editar pedidos");
-            showMenuItem("4", "📊", "Relatórios", "relatórios básicos");
+            showMenuItem("1", "👥", "Clientes", "cadastro de clientes");
+            showMenuItem("2", "📦", "Produtos", "cadastro de produtos");
+            showMenuItem("3", "🛒", "Pedidos", "cadastro de pedidos");
+            showMenuItem("4", "📊", "Relatórios", "relatórios de vendas");
             showMenuItem("0", "🚪", "Sair", "");
             showFooter();
             showInputPrompt("aguardando seleção do menu: ");

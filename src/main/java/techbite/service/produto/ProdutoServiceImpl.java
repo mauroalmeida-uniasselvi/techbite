@@ -24,6 +24,15 @@ public class ProdutoServiceImpl implements techbite.service.produto.ProdutoServi
     }
 
     @Override
+    public techbite.entity.produto.ProdutoEntity obterPorId(String id) {
+        try {
+            return db.getById(techbite.utils.DataFiles.PRODUTO, techbite.entity.produto.ProdutoEntity.class, id).orElse(null);
+        } catch (java.io.IOException e) {
+            return null;
+        }
+    }
+
+    @Override
     public void criar(techbite.entity.produto.ProdutoEntity entity) throws Exception {
         db.create(techbite.utils.DataFiles.PRODUTO, techbite.entity.produto.ProdutoEntity.class, entity);
     }

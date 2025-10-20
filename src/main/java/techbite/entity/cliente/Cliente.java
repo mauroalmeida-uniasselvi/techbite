@@ -17,6 +17,14 @@ public abstract class Cliente {
         };
     }
 
+    public String cpf() {
+        return this.cliente.cpf();
+    }
+
+    public String tipo() {
+        return this.cliente.tipo().name();
+    }
+
     public double desconto() {
         return this.desconto;
     }

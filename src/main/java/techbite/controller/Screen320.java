@@ -7,24 +7,56 @@ import java.util.*;
  */
 public class Screen320 extends ScreenMain {
 
-    private static final Screen320 instance = new Screen320();
-
-    private List<techbite.entity.pedido.PedidoEntity> pedidos = Collections.emptyList();
     private final techbite.service.pedido.PedidoService pedidoService;
+    private final techbite.service.produto.ProdutoService produtoService;
+    private final techbite.service.cliente.ClienteService clienteService;
 
     private Screen320() {
-        this.pedidoService = new techbite.service.pedido.PedidoService();
+        this.pedidoService = new techbite.service.pedido.PedidoServiceImpl();
+        this.produtoService = new techbite.service.produto.ProdutoServiceImpl();
+        this.clienteService = new techbite.service.cliente.ClienteServiceImpl();
     }
 
+    private static final Screen320 instance = new Screen320();
 
     public static void show(Scanner scanner) {
         instance.showMenu(scanner);
     }
 
+    private List<techbite.entity.pedido.Pedido> listarPedidos() {
+        List<techbite.entity.pedido.Pedido> pedidos = new ArrayList<>();
+        List<techbite.entity.pedido.PedidoEntity> pedidosEntity = this.pedidoService.listar();
+        for (techbite.entity.pedido.PedidoEntity pedidoEntity : pedidosEntity) {
+            techbite.entity.cliente.ClienteEntity clienteEntity = this.clienteService.obterPorId(pedidoEntity.cliente());
+            techbite.entity.cliente.Cliente cliente = techbite.entity.cliente.ClienteFactory.builder().cliente(clienteEntity).build();
+            techbite.entity.pedido.Pedido pedido = new techbite.entity.pedido.Pedido(cliente);
+            for (String produtoId : pedidoEntity.produtos()) {
+                techbite.entity.produto.ProdutoEntity produtoEntity = this.produtoService.obterPorId(produtoId);
+                if (produtoEntity != null) {
+                    techbite.entity.produto.Produto produto = new techbite.entity.produto.Produto(produtoEntity);
+                    pedido.adicionarProduto(produto);
+                }
+            }
+            pedidos.add(pedido);
+        }
+        return pedidos;
+    }
+
+
     private void showMenu(Scanner scanner) {
+        List<techbite.entity.pedido.Pedido> pedidos = instance.listarPedidos();
         while (true) {
             showHeader("[3.2.0] Listar pedidos");
-            showMenuItem("0", "⬅️", "Voltar", "");
+            showMenuItem("0", "⬅️ ", "Voltar", "");
+            showFooter();
+            for (techbite.entity.pedido.Pedido pedido : pedidos) {
+                System.out.printf(" CPF: %s\tDATA: %s\n", pedido.cliente().cpf(), pedido.data());
+                for (techbite.entity.produto.Produto produto : pedido.produtos()) {
+                    System.out.printf("  - %s R$ %s\n", produto.nome(), produto.preco());
+                }
+                System.out.printf(" TOTAL (DESCONTO %s): R$ %s\n", pedido.cliente().tipo(), pedido.precoDesconto());
+                System.out.println();
+            }
             showFooter();
             showInputPrompt("aguardando seleção do menu: ");
             String input = scanner.nextLine().trim();

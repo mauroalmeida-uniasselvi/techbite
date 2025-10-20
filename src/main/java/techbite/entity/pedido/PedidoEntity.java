@@ -7,10 +7,9 @@ public record PedidoEntity(
         String id,
         String cliente,
         List<String> produtos,
-        double total,
-        boolean pago,
         LocalDateTime criadoEm
 ) implements techbite.entity.StorageID {
+
     @Override
     public String getId() {
         return id;

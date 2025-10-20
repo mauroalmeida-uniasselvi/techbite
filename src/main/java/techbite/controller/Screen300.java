@@ -17,7 +17,7 @@ public class Screen300 extends ScreenMain {
             showHeader("[3.0.0] Pedidos");
             showMenuItem("1", "🛒", "Criar pedido", "");
             showMenuItem("2", "📋", "Listar pedidos", "");
-            showMenuItem("0", "⬅️", "Voltar", "");
+            showMenuItem("0", "⬅️ ", "Voltar", "");
             showFooter();
             showInputPrompt("aguardando seleção do menu: ");
             String input = scanner.nextLine().trim();

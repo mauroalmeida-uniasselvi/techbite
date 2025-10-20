@@ -17,7 +17,7 @@ public class Screen200 extends ScreenMain {
             showHeader("[2.0.0] Produtos");
             showMenuItem("1", "➕", "Criar produto", "");
             showMenuItem("2", "📋", "Listar produtos", "");
-            showMenuItem("0", "⬅️", "Voltar", "");
+            showMenuItem("0", "⬅️ ", "Voltar", "");
             showFooter();
             showInputPrompt("aguardando seleção do menu: ");
             String input = scanner.nextLine().trim();

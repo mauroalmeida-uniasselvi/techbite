@@ -25,12 +25,32 @@ public class Pedido {
         return this.produtos;
     }
 
-    public double precoTotal() {
+
+    public String data() {
+        java.time.LocalDateTime now = java.time.LocalDateTime.now();
+        java.time.format.DateTimeFormatter formatter = java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+        return now.format(formatter);
+    }
+
+    public String tipo() {
+        return cliente.tipo();
+    }
+
+    public double preco() {
         double total = 0;
         for (techbite.entity.produto.Produto p : produtos) {
             total += p.preco();
         }
         return total;
+    }
+
+    public double precoDesconto() {
+        return preco() - (preco() * cliente.desconto());
+    }
+
+
+    public boolean pago() {
+        return true;
     }
 
 }

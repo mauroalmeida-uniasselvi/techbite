@@ -24,6 +24,15 @@ public class ClienteServiceImpl implements techbite.service.cliente.ClienteServi
     }
 
     @Override
+    public techbite.entity.cliente.ClienteEntity obterPorId(String id) {
+        try {
+            return db.getById(techbite.utils.DataFiles.CLIENTE, techbite.entity.cliente.ClienteEntity.class, id).orElse(null);
+        } catch (java.io.IOException e) {
+            return null;
+        }
+    }
+
+    @Override
     public void criar(techbite.entity.cliente.ClienteEntity entity) throws Exception {
         db.create(techbite.utils.DataFiles.CLIENTE, techbite.entity.cliente.ClienteEntity.class, entity);
     }

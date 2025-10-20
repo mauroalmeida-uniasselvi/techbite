@@ -14,7 +14,7 @@ public class Screen100 extends ScreenMain {
             showHeader("[1.0.0] Clientes");
             showMenuItem("1", "➕", "Criar cliente", "");
             showMenuItem("2", "📋", "Listar clientes", "");
-            showMenuItem("0", "⬅️", "Voltar", "");
+            showMenuItem("0", "⬅️ ", "Voltar", "");
             showFooter();
             showInputPrompt("aguardando seleção do menu: ");
             String input = scanner.nextLine().trim();

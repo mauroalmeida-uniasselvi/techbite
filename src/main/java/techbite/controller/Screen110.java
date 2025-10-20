@@ -40,7 +40,7 @@ public class Screen110 extends ScreenMain {
     }
 
     private void showMenu(Scanner scanner) {
-        showHeader("[1.1.0] Criar novo cliente");
+        showHeader("[1.1.0] Criar cliente");
         showFooter();
 
         showInputPrompt("Escreva o CPF: ");

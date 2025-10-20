@@ -4,7 +4,8 @@ public interface ProdutoService {
 
     java.util.List<techbite.entity.produto.ProdutoEntity> listar();
 
-    void criar(techbite.entity.produto.ProdutoEntity entity) throws Exception;
+    techbite.entity.produto.ProdutoEntity obterPorId(String id);
 
+    void criar(techbite.entity.produto.ProdutoEntity entity) throws Exception;
 
 }

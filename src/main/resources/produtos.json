@@ -1,2 +1,56 @@
-[]
-
+[
+  {
+    "id": "ITEM01",
+    "nome": "Café",
+    "descricao": "Café preto quente",
+    "preco": 9.0
+  },
+  {
+    "id": "ITEM02",
+    "nome": "Pão com Ovo",
+    "descricao": "Pão francês com ovo frito",
+    "preco": 12.0
+  },
+  {
+    "id": "ITEM03",
+    "nome": "Sanduíche",
+    "descricao": "Sanduíche de presunto e queijo",
+    "preco": 21.0
+  },
+  {
+    "id": "ITEM04",
+    "nome": "Hambúrguer",
+    "descricao": "Hambúrguer artesanal com carne bovina",
+    "preco": 32.0
+  },
+  {
+    "id": "ITEM05",
+    "nome": "Suco",
+    "descricao": "Suco natural de frutas",
+    "preco": 12.0
+  },
+  {
+    "id": "ITEM06",
+    "nome": "Refrigerante",
+    "descricao": "Refrigerante gelado",
+    "preco": 10.0
+  },
+  {
+    "id": "ITEM07",
+    "nome": "Água com gás",
+    "descricao": "Água mineral com gás",
+    "preco": 7.0
+  },
+  {
+    "id": "ITEM08",
+    "nome": "Torta",
+    "descricao": "Torta de maçã caseira",
+    "preco": 18.0
+  },
+  {
+    "id": "ITEM09",
+    "nome": "Chocolate",
+    "descricao": "Chocolate quente",
+    "preco": 20.0
+  }
+]
