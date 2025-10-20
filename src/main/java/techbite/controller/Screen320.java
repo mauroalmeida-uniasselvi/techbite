@@ -26,7 +26,7 @@ public class Screen320 extends ScreenMain {
     private List<techbite.entity.pedido.Pedido> listarPedidos() {
         List<techbite.entity.pedido.Pedido> pedidos = new ArrayList<>();
         List<techbite.entity.pedido.PedidoEntity> pedidosEntity = this.pedidoService.listar();
-        for (techbite.entity.pedido.PedidoEntity pedidoEntity : pedidosEntity) {
+        for (techbite.entity.pedido.PedidoEntity pedidoEntity : pedidosEntity.subList(pedidosEntity.size() -5, pedidosEntity.size())) {
             techbite.entity.cliente.ClienteEntity clienteEntity = this.clienteService.obterPorId(pedidoEntity.cliente());
             techbite.entity.cliente.Cliente cliente = techbite.entity.cliente.ClienteFactory.builder().cliente(clienteEntity).build();
             techbite.entity.pedido.Pedido pedido = new techbite.entity.pedido.Pedido(cliente);
@@ -54,7 +54,7 @@ public class Screen320 extends ScreenMain {
                 for (techbite.entity.produto.Produto produto : pedido.produtos()) {
                     System.out.printf("  - %s R$ %s\n", produto.nome(), produto.preco());
                 }
-                System.out.printf(" TOTAL (DESCONTO %s): R$ %s\n", pedido.cliente().tipo(), pedido.precoDesconto());
+                System.out.printf(" TOTAL (DESC. %s): R$ %s\n", pedido.cliente().tipo(), pedido.precoDesconto());
                 System.out.println();
             }
             showFooter();
