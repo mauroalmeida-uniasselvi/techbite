@@ -29,7 +29,7 @@ public class Screen320 extends ScreenMain {
         for (techbite.entity.pedido.PedidoEntity pedidoEntity : pedidosEntity.subList(pedidosEntity.size() -5, pedidosEntity.size())) {
             techbite.entity.cliente.ClienteEntity clienteEntity = this.clienteService.obterPorId(pedidoEntity.cliente());
             techbite.entity.cliente.Cliente cliente = techbite.entity.cliente.ClienteFactory.builder().cliente(clienteEntity).build();
-            techbite.entity.pedido.Pedido pedido = new techbite.entity.pedido.Pedido(cliente);
+            techbite.entity.pedido.Pedido pedido = new techbite.entity.pedido.Pedido(cliente, pedidoEntity.criadoEm());
             for (String produtoId : pedidoEntity.produtos()) {
                 techbite.entity.produto.ProdutoEntity produtoEntity = this.produtoService.obterPorId(produtoId);
                 if (produtoEntity != null) {

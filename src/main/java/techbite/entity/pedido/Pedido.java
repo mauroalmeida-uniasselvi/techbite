@@ -8,9 +8,16 @@ public class Pedido {
     private final techbite.entity.cliente.Cliente cliente;
     private final List<techbite.entity.produto.Produto> produtos;
 
-    public Pedido(techbite.entity.cliente.Cliente cliente) {
+    private final java.time.LocalDateTime criadoEm;
+
+    public Pedido(techbite.entity.cliente.Cliente cliente, java.time.LocalDateTime criadoEm) {
         this.cliente = cliente;
+        this.criadoEm = criadoEm;
         this.produtos = new ArrayList<>();
+    }
+
+    public java.time.LocalDateTime criadoEm() {
+        return criadoEm;
     }
 
     public techbite.entity.cliente.Cliente cliente() {
@@ -27,9 +34,8 @@ public class Pedido {
 
 
     public String data() {
-        java.time.LocalDateTime now = java.time.LocalDateTime.now();
         java.time.format.DateTimeFormatter formatter = java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-        return now.format(formatter);
+        return this.criadoEm.format(formatter);
     }
 
     public String tipo() {
