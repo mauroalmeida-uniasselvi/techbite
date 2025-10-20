@@ -1,9 +1,15 @@
 package techbite.entity.produto;
 
-public record ProdutoEntity(String nome, double preco) {
+public record ProdutoEntity(String id, String nome, double preco) implements techbite.entity.StorageID {
 
     @Override
     public String toString() {
         return nome + " - R$ " + preco;
     }
+
+    @Override
+    public String getId() {
+        return id;
+    }
 }
+

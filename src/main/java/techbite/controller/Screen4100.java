@@ -17,7 +17,7 @@ public class Screen4100 extends ScreenMain {
             showHeader("[4.10.0] clientes inativos");
             showMenuItem("0", "⬅️", "Voltar", "");
             showFooter();
-            showInputPrompt("Escolha uma opção: ");
+            showInputPrompt("aguardando seleção do menu: ");
             String input = scanner.nextLine().trim();
             switch (input) {
                 case "0":

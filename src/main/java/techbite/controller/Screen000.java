@@ -13,12 +13,12 @@ public class Screen000 extends ScreenMain {
         while (true) {
             showHeader("[0.0.0] Menu Principal");
             showMenuItem("1", "👥", "Clientes", "cadastro básico");
-            showMenuItem("2", "�", "Produtos", "cadastro básico");
-            showMenuItem("3", "�", "Pedidos", "criar, listar e editar pedidos");
+            showMenuItem("2", "📦", "Produtos", "cadastro básico");
+            showMenuItem("3", "🛒", "Pedidos", "criar, listar e editar pedidos");
             showMenuItem("4", "📊", "Relatórios", "relatórios básicos");
             showMenuItem("0", "🚪", "Sair", "");
             showFooter();
-            showInputPrompt("Escolha uma opção: ");
+            showInputPrompt("aguardando seleção do menu: ");
             String input = scanner.nextLine().trim();
             switch (input) {
                 case "1":
@@ -34,8 +34,7 @@ public class Screen000 extends ScreenMain {
                     Screen400.show(scanner);
                     break;
                 case "0":
-                    System.out.println("saindo...");
-                    return;
+                    System.exit(0);
                 default:
                     System.out.println("Opção inválida. Tente novamente.");
             }

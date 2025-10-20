@@ -17,10 +17,11 @@ public class Screen210 extends ScreenMain {
             showHeader("[2.1.0] Criar novo produto");
             showMenuItem("0", "⬅️", "Voltar", "");
             showFooter();
-            showInputPrompt("Escolha uma opção: ");
+            showInputPrompt("aguardando seleção do menu: ");
             String input = scanner.nextLine().trim();
             switch (input) {
                 case "0":
+                    Screen200.show(scanner);
                     return;
                 default:
                     System.out.println("Opção inválida. Tente novamente.");

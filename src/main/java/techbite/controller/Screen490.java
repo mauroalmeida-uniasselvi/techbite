@@ -17,7 +17,7 @@ public class Screen490 extends ScreenMain {
             showHeader("[4.9.0] recorrência de clientes");
             showMenuItem("0", "⬅️", "Voltar", "");
             showFooter();
-            showInputPrompt("Escolha uma opção: ");
+            showInputPrompt("aguardando seleção do menu: ");
             String input = scanner.nextLine().trim();
             switch (input) {
                 case "0":

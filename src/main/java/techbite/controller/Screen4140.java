@@ -17,7 +17,7 @@ public class Screen4140 extends ScreenMain {
             showHeader("[4.14.0] meios de pagamento");
             showMenuItem("0", "⬅️", "Voltar", "");
             showFooter();
-            showInputPrompt("Escolha uma opção: ");
+            showInputPrompt("aguardando seleção do menu: ");
             String input = scanner.nextLine().trim();
             switch (input) {
                 case "0":

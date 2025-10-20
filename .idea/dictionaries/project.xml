@@ -1,6 +1,8 @@
 <component name="ProjectDictionaryState">
   <dictionary name="project">
     <words>
+      <w>adicionar</w>
+      <w>aguardando</w>
       <w>associado</w>
       <w>básicos</w>
       <w>cadastro</w>
@@ -9,11 +11,17 @@
       <w>criado</w>
       <w>criar</w>
       <w>definir</w>
+      <w>digite</w>
       <w>editar</w>
       <w>escolha</w>
+      <w>escreva</w>
+      <w>evolução</w>
       <w>funcionario</w>
+      <w>inválida</w>
+      <w>inválido</w>
       <w>listar</w>
       <w>notafiscal</w>
+      <w>novamente</w>
       <w>opção</w>
       <w>pagamento</w>
       <w>pagamentos</w>
@@ -23,6 +31,10 @@
       <w>produtos</w>
       <w>realizado</w>
       <w>relatórios</w>
+      <w>sair</w>
+      <w>seleção</w>
+      <w>tente</w>
+      <w>voltar</w>
     </words>
   </dictionary>
 </component>

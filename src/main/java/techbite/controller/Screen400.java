@@ -32,7 +32,7 @@ public class Screen400 extends ScreenMain {
             showMenuItem("15", "↩️", "devoluções", "taxa e motivos");
             showMenuItem("0", "⬅️", "Voltar", "");
             showFooter();
-            showInputPrompt("Escolha uma opção: ");
+            showInputPrompt("aguardando seleção do menu: ");
             String input = scanner.nextLine().trim();
             switch (input) {
                 case "1":

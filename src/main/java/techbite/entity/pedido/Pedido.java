@@ -1,5 +1,5 @@
 
-package techbite.service.pedido;
+package techbite.entity.pedido;
 
 
 import java.util.*;

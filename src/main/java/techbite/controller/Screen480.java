@@ -17,7 +17,7 @@ public class Screen480 extends ScreenMain {
             showHeader("[4.8.0] margem por produto");
             showMenuItem("0", "⬅️", "Voltar", "");
             showFooter();
-            showInputPrompt("Escolha uma opção: ");
+            showInputPrompt("aguardando seleção do menu: ");
             String input = scanner.nextLine().trim();
             switch (input) {
                 case "0":

@@ -21,7 +21,7 @@ public class Screen4150 extends ScreenMain {
             String input = scanner.nextLine().trim();
             switch (input) {
                 case "0":
-                    return;
+                    break;
                 default:
                     System.out.println("Opção inválida. Tente novamente.");
             }

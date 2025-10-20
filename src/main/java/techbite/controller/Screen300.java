@@ -19,7 +19,7 @@ public class Screen300 extends ScreenMain {
             showMenuItem("2", "📋", "Listar pedidos", "");
             showMenuItem("0", "⬅️", "Voltar", "");
             showFooter();
-            showInputPrompt("Escolha uma opção: ");
+            showInputPrompt("aguardando seleção do menu: ");
             String input = scanner.nextLine().trim();
             switch (input) {
                 case "1":
@@ -29,6 +29,7 @@ public class Screen300 extends ScreenMain {
                     Screen320.show(scanner);
                     break;
                 case "0":
+                    Screen000.show(scanner);
                     return;
                 default:
                     System.out.println("Opção inválida. Tente novamente.");

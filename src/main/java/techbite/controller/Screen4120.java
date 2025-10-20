@@ -17,7 +17,7 @@ public class Screen4120 extends ScreenMain {
             showHeader("[4.12.0] previsão de compras");
             showMenuItem("0", "⬅️", "Voltar", "");
             showFooter();
-            showInputPrompt("Escolha uma opção: ");
+            showInputPrompt("aguardando seleção do menu: ");
             String input = scanner.nextLine().trim();
             switch (input) {
                 case "0":

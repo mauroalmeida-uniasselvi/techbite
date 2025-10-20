@@ -12,11 +12,11 @@ public class Screen100 extends ScreenMain {
     private void showMenu(Scanner scanner) {
         while (true) {
             showHeader("[1.0.0] Clientes");
-            showMenuItem("1", "➕", "Criar novo cliente", "");
+            showMenuItem("1", "➕", "Criar cliente", "");
             showMenuItem("2", "📋", "Listar clientes", "");
             showMenuItem("0", "⬅️", "Voltar", "");
             showFooter();
-            showInputPrompt("Escolha uma opção: ");
+            showInputPrompt("aguardando seleção do menu: ");
             String input = scanner.nextLine().trim();
             switch (input) {
                 case "1":
@@ -26,6 +26,7 @@ public class Screen100 extends ScreenMain {
                     Screen120.show(scanner);
                     break;
                 case "0":
+                    Screen000.show(scanner);
                     return;
                 default:
                     System.out.println("Opção inválida. Tente novamente.");

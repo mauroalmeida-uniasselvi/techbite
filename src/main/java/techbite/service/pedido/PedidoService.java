@@ -1,4 +1,9 @@
-package techbite.service;
+package techbite.service.pedido;
 
-public interface IPedidoService {
+public interface PedidoService {
+
+    java.util.List<techbite.entity.pedido.PedidoEntity> listar();
+
+    void criar(techbite.entity.pedido.PedidoEntity entity) throws Exception;
+
 }

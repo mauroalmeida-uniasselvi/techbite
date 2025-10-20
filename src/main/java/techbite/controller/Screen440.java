@@ -17,10 +17,11 @@ public class Screen440 extends ScreenMain {
             showHeader("[4.4.0] ticket médio");
             showMenuItem("0", "⬅️", "Voltar", "");
             showFooter();
-            showInputPrompt("Escolha uma opção: ");
+            showInputPrompt("aguardando seleção do menu: ");
             String input = scanner.nextLine().trim();
             switch (input) {
                 case "0":
+                    Screen400.show(scanner);
                     return;
                 default:
                     System.out.println("Opção inválida. Tente novamente.");

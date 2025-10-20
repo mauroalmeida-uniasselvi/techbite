@@ -17,21 +17,8 @@ public abstract class Cliente {
         };
     }
 
-    public String getCpf() {
-        return cliente.cpf();
+    public double desconto() {
+        return this.desconto;
     }
-
-    public String getNome() {
-        return cliente.nome();
-    }
-
-    public techbite.entity.cliente.TipoCliente getTipo() {
-        return cliente.tipo();
-    }
-
-    public double getDesconto() {
-        return desconto;
-    }
-
 
 }

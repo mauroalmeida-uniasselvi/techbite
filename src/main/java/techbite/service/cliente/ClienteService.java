@@ -1,18 +1,11 @@
-package techbite.service;
+package techbite.service.cliente;
 
-import java.io.IOException;
-import java.util.Optional;
+import java.io.*;
 
-public interface IClienteService {
+public interface ClienteService {
 
-    java.util.List<techbite.entity.cliente.ClienteEntity> listarClientes() throws java.io.IOException;
+    java.util.List<techbite.entity.cliente.ClienteEntity> listar();
 
-    void criar(techbite.entity.cliente.ClienteEntity entity) throws IOException;
-
-    Optional<techbite.entity.cliente.ClienteEntity> buscarPorId(String cpf) throws IOException;
-
-    techbite.entity.cliente.ClienteEntity atualizar(techbite.entity.cliente.ClienteEntity entity) throws IOException;
-
-    boolean remover(String cpf) throws IOException;
+    void criar(techbite.entity.cliente.ClienteEntity entity) throws Exception;
 
 }
