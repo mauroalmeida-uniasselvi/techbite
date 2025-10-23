@@ -18,7 +18,6 @@ public class Screen310 extends ScreenMain {
         instance.showMenu(scanner);
     }
 
-
     private void criarPedido(String clienteId, List<String> produtos) {
         try {
             pedidoService.criar(
@@ -35,7 +34,8 @@ public class Screen310 extends ScreenMain {
         }
     }
 
-    private void showMenu(Scanner scanner) {
+    @Override
+    protected void showMenu(Scanner scanner) {
         showHeader("[3.1.0] Criar pedido");
         showFooter();
 

@@ -39,7 +39,8 @@ public class Screen110 extends ScreenMain {
         instance.showMenu(scanner);
     }
 
-    private void showMenu(Scanner scanner) {
+    @Override
+    protected void showMenu(Scanner scanner) {
         showHeader("[1.1.0] Criar cliente");
         showFooter();
 

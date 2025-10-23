@@ -19,7 +19,8 @@ public class Screen220 extends ScreenMain {
         instance.showMenu(scanner);
     }
 
-    private void showMenu(Scanner scanner) {
+    @Override
+    protected void showMenu(Scanner scanner) {
         List<techbite.entity.produto.ProdutoEntity> produtos = this.produtoService.listar();
         while (true) {
             showHeader("[2.2.0] Listar produtos");

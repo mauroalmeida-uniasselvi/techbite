@@ -19,7 +19,8 @@ public class Screen120 extends ScreenMain {
         instance.showMenu(scanner);
     }
 
-    private void showMenu(Scanner scanner) {
+    @Override
+    protected void showMenu(Scanner scanner) {
         List<techbite.entity.cliente.ClienteEntity> clientes = this.clienteService.listar();
         while (true) {
             showHeader("[1.2.0] Listar clientes");

@@ -12,7 +12,8 @@ public class Screen400 extends ScreenMain {
         instance.showMenu(scanner);
     }
 
-    private void showMenu(Scanner scanner) {
+    @Override
+    protected void showMenu(Scanner scanner) {
         while (true) {
             showHeader("[4.0.0] Relatórios");
             showMenuItem("1", "👥", "clientes ativos", "compras nos últimos 30 dias");

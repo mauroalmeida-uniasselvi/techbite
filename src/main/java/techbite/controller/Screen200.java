@@ -12,7 +12,8 @@ public class Screen200 extends ScreenMain {
         instance.showMenu(scanner);
     }
 
-    private void showMenu(Scanner scanner) {
+    @Override
+    protected void showMenu(Scanner scanner) {
         while (true) {
             showHeader("[2.0.0] Produtos");
             showMenuItem("1", "➕", "Criar produto", "");

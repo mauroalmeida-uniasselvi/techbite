@@ -12,7 +12,8 @@ public class Screen470 extends ScreenMain {
         instance.showMenu(scanner);
     }
 
-    private void showMenu(Scanner scanner) {
+    @Override
+    protected void showMenu(Scanner scanner) {
         while (true) {
             showHeader("[4.7.0] evolução de vendas");
             showMenuItem("0", "⬅️", "Voltar", "");

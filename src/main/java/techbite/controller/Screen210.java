@@ -35,7 +35,8 @@ public class Screen210 extends ScreenMain {
     }
 
 
-    private void showMenu(Scanner scanner) {
+    @Override
+    protected void showMenu(Scanner scanner) {
         showHeader("[2.1.0] Criar produto");
 
         showFooter();

@@ -12,7 +12,8 @@ public class Screen450 extends ScreenMain {
         instance.showMenu(scanner);
     }
 
-    private void showMenu(Scanner scanner) {
+    @Override
+    protected void showMenu(Scanner scanner) {
         while (true) {
             showHeader("[4.5.0] top produtos");
             showMenuItem("0", "⬅️", "Voltar", "");

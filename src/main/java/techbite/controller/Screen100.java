@@ -9,7 +9,8 @@ public class Screen100 extends ScreenMain {
         instance.showMenu(scanner);
     }
 
-    private void showMenu(Scanner scanner) {
+    @Override
+    protected void showMenu(Scanner scanner) {
         while (true) {
             showHeader("[1.0.0] Clientes");
             showMenuItem("1", "➕", "Criar cliente", "");

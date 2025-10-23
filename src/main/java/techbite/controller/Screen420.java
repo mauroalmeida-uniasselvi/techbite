@@ -12,7 +12,8 @@ public class Screen420 extends ScreenMain {
         instance.showMenu(scanner);
     }
 
-    private void showMenu(Scanner scanner) {
+    @Override
+    protected void showMenu(Scanner scanner) {
         while (true) {
             showHeader("[4.2.0] estoque em baixa");
             showMenuItem("0", "⬅️", "Voltar", "");

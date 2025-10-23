@@ -12,7 +12,8 @@ public class Screen480 extends ScreenMain {
         instance.showMenu(scanner);
     }
 
-    private void showMenu(Scanner scanner) {
+    @Override
+    protected void showMenu(Scanner scanner) {
         while (true) {
             showHeader("[4.8.0] margem por produto");
             showMenuItem("0", "⬅️", "Voltar", "");

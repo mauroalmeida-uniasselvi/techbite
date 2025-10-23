@@ -18,6 +18,8 @@ public abstract class ScreenMain {
         System.out.flush();
     }
 
+    protected abstract void showMenu(java.util.Scanner scanner);
+
     protected void showHeader(String title) {
         clearScreen();
         String currentTime = LocalDateTime.now().atZone(java.time.ZoneId.of("America/Sao_Paulo")).format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));

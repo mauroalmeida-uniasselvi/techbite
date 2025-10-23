@@ -26,7 +26,7 @@ public class Screen320 extends ScreenMain {
     private List<techbite.entity.pedido.Pedido> listarPedidos() {
         List<techbite.entity.pedido.Pedido> pedidos = new ArrayList<>();
         List<techbite.entity.pedido.PedidoEntity> pedidosEntity = this.pedidoService.listar();
-        for (techbite.entity.pedido.PedidoEntity pedidoEntity : pedidosEntity.subList(pedidosEntity.size() -5, pedidosEntity.size())) {
+        for (techbite.entity.pedido.PedidoEntity pedidoEntity : pedidosEntity.subList(pedidosEntity.size() - 3, pedidosEntity.size())) {
             techbite.entity.cliente.ClienteEntity clienteEntity = this.clienteService.obterPorId(pedidoEntity.cliente());
             techbite.entity.cliente.Cliente cliente = techbite.entity.cliente.ClienteFactory.builder().cliente(clienteEntity).build();
             techbite.entity.pedido.Pedido pedido = new techbite.entity.pedido.Pedido(cliente, pedidoEntity.criadoEm());
@@ -42,8 +42,8 @@ public class Screen320 extends ScreenMain {
         return pedidos;
     }
 
-
-    private void showMenu(Scanner scanner) {
+    @Override
+    protected void showMenu(Scanner scanner) {
         List<techbite.entity.pedido.Pedido> pedidos = instance.listarPedidos();
         while (true) {
             showHeader("[3.2.0] Listar pedidos");
