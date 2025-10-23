@@ -26,7 +26,7 @@ public class Screen220 extends ScreenMain {
             showMenuItem("0", "⬅️", "Voltar", "");
             showFooter();
             for (techbite.entity.produto.ProdutoEntity produto : produtos) {
-                System.out.printf(" NOME: %s PREÇO: %s\n", produto.nome(), produto.preco());
+                System.out.printf(" NOME: %s PREÇO: R$%.2f\n", produto.nome(), produto.preco());
             }
             showFooter();
             showInputPrompt("aguardando seleção do menu: ");

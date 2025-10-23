@@ -19,12 +19,12 @@ public class Screen400 extends ScreenMain {
             showMenuItem("2", "📦", "estoque em baixa", "até 40% do consumo mensal");
             showMenuItem("3", "💸", "faturamento", "por dia/semana/mês");
             showMenuItem("4", "🧾", "ticket médio", "valor médio por venda");
-            showMenuItem("5", "⭐", "top produtos", "mais vendidos no período");
-            showMenuItem("6", "🐢", "produtos parados", "sem vendas há 60 dias");
+            showMenuItem("5", "⭐", "top produtos", "mais vendidos no período de 15 dias");
+            showMenuItem("6", "🐢", "produtos parados", "sem vendas há 7 dias");
             showMenuItem("7", "📈", "evolução de vendas", "por categoria");
             showMenuItem("8", "💹", "margem por produto", "preço, custo e lucro");
             showMenuItem("9", "🔁", "recorrência de clientes", "RFM/última compra");
-            showMenuItem("10", "⏳", "clientes inativos", "sem compras há 90 dias");
+            showMenuItem("10", "⏳", "clientes inativos", "sem compras há 30 dias");
             showMenuItem("11", "🚚", "fornecedores", "prazo de entrega e fill rate");
             showMenuItem("12", "🧮", "previsão de compras", "sugestão por consumo");
             showMenuItem("13", "📊", "ABC de estoque", "valor e giro");

@@ -5,10 +5,6 @@ import java.nio.file.*;
 import java.util.*;
 import java.util.stream.*;
 
-/**
- * Local JSON-backed database that composes JsonFile for low-level read/write
- * and provides CRUD operations on top of JSON arrays.
- */
 public class StorageJson implements techbite.entity.Storage {
     private final JsonFile jsonFile;
 
@@ -28,7 +24,6 @@ public class StorageJson implements techbite.entity.Storage {
         return Paths.get("src", "main", "resources");
     }
 
-    // CRUD operations using Identifiable
     @Override
     public <T extends techbite.entity.StorageID> void create(String fileName, Class<T> type, T entity) throws IOException {
         List<T> all = new ArrayList<>(jsonFile.loadList(type, fileName));

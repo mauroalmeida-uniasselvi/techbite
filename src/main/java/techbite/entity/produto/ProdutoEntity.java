@@ -8,11 +8,6 @@ public record ProdutoEntity(
 ) implements techbite.entity.StorageID {
 
     @Override
-    public String toString() {
-        return nome + " - R$ " + preco;
-    }
-
-    @Override
     public String getId() {
         return id;
     }

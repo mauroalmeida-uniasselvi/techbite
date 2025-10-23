@@ -5,11 +5,14 @@
       <w>aguardando</w>
       <w>artesanal</w>
       <w>associado</w>
+      <w>ativos</w>
       <w>bovina</w>
       <w>básicos</w>
       <w>cadastro</w>
       <w>caseira</w>
+      <w>cliente</w>
       <w>clientes</w>
+      <w>compras</w>
       <w>comum</w>
       <w>continuar</w>
       <w>criado</w>
@@ -38,7 +41,9 @@
       <w>pagamentos</w>
       <w>pedido</w>
       <w>pedidos</w>
+      <w>preco</w>
       <w>preto</w>
+      <w>preço</w>
       <w>produto</w>
       <w>produtos</w>
       <w>queijo</w>
@@ -49,6 +54,7 @@
       <w>sanduíche</w>
       <w>seleção</w>
       <w>sucesso</w>
+      <w>techbite</w>
       <w>tente</w>
       <w>voltar</w>
     </words>

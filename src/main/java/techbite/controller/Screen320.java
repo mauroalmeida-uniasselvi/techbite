@@ -52,9 +52,9 @@ public class Screen320 extends ScreenMain {
             for (techbite.entity.pedido.Pedido pedido : pedidos) {
                 System.out.printf(" CPF: %s\tDATA: %s\n", pedido.cliente().cpf(), pedido.data());
                 for (techbite.entity.produto.Produto produto : pedido.produtos()) {
-                    System.out.printf("  - %s R$ %s\n", produto.nome(), produto.preco());
+                    System.out.printf("  - %s R$%.2f\n", produto.nome(), produto.preco());
                 }
-                System.out.printf(" TOTAL (DESC. %s): R$ %s\n", pedido.cliente().tipo(), pedido.precoDesconto());
+                System.out.printf(" TOTAL (DESC. %s): R$%.2f\n", pedido.cliente().tipo(), pedido.precoDesconto());
                 System.out.println();
             }
             showFooter();
