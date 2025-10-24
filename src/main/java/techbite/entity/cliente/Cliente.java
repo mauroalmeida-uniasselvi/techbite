@@ -21,6 +21,10 @@ public abstract class Cliente {
         return this.cliente.cpf();
     }
 
+    public String nome() {
+        return this.cliente.nome();
+    }
+
     public String tipo() {
         return this.cliente.tipo().name();
     }
@@ -29,4 +33,15 @@ public abstract class Cliente {
         return this.desconto;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        techbite.entity.cliente.Cliente cliente1 = (techbite.entity.cliente.Cliente) o;
+        return java.util.Objects.equals(cliente, cliente1.cliente);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hashCode(cliente);
+    }
 }

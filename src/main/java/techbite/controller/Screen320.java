@@ -7,14 +7,14 @@ import java.util.*;
  */
 public class Screen320 extends ScreenMain {
 
-    private final techbite.service.pedido.PedidoService pedidoService;
-    private final techbite.service.produto.ProdutoService produtoService;
-    private final techbite.service.cliente.ClienteService clienteService;
+    private final techbite.service.pedido.PedidoFacade pedidoFacade;
 
     private Screen320() {
-        this.pedidoService = new techbite.service.pedido.PedidoServiceImpl();
-        this.produtoService = new techbite.service.produto.ProdutoServiceImpl();
-        this.clienteService = new techbite.service.cliente.ClienteServiceImpl();
+        this.pedidoFacade = new techbite.service.pedido.PedidoFacade(
+                new techbite.service.pedido.PedidoServiceImpl(),
+                new techbite.service.produto.ProdutoServiceImpl(),
+                new techbite.service.cliente.ClienteServiceImpl()
+        );
     }
 
     private static final Screen320 instance = new Screen320();
@@ -24,22 +24,8 @@ public class Screen320 extends ScreenMain {
     }
 
     private List<techbite.entity.pedido.Pedido> listarPedidos() {
-        List<techbite.entity.pedido.Pedido> pedidos = new ArrayList<>();
-        List<techbite.entity.pedido.PedidoEntity> pedidosEntity = this.pedidoService.listar();
-        for (techbite.entity.pedido.PedidoEntity pedidoEntity : pedidosEntity.subList(pedidosEntity.size() - 3, pedidosEntity.size())) {
-            techbite.entity.cliente.ClienteEntity clienteEntity = this.clienteService.obterPorId(pedidoEntity.cliente());
-            techbite.entity.cliente.Cliente cliente = techbite.entity.cliente.ClienteFactory.builder().cliente(clienteEntity).build();
-            techbite.entity.pedido.Pedido pedido = new techbite.entity.pedido.Pedido(cliente, pedidoEntity.criadoEm());
-            for (String produtoId : pedidoEntity.produtos()) {
-                techbite.entity.produto.ProdutoEntity produtoEntity = this.produtoService.obterPorId(produtoId);
-                if (produtoEntity != null) {
-                    techbite.entity.produto.Produto produto = new techbite.entity.produto.Produto(produtoEntity);
-                    pedido.adicionarProduto(produto);
-                }
-            }
-            pedidos.add(pedido);
-        }
-        return pedidos;
+        var listaPedidos = pedidoFacade.listarPedidos();
+        return listaPedidos.subList(listaPedidos.size() - 3, listaPedidos.size());
     }
 
     @Override
