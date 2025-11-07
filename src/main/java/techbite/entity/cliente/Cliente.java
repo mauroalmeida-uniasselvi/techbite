@@ -44,4 +44,6 @@ public abstract class Cliente {
     public int hashCode() {
         return java.util.Objects.hashCode(cliente);
     }
+
+    
 }

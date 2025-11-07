@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/run-fatjar.sh">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/run-fatjar.sh" />
+              <option name="originalContent" value="#!/bin/bash&#10;&#10;# Script para executar o TechBite Fat JAR&#10;# Uso: ./run-fatjar.sh&#10;&#10;echo &quot; TechBite - Executando Fat JAR...&quot;&#10;echo &quot;&quot;&#10;&#10;# Verifica se o fat JAR existe&#10;FAT_JAR=&quot;build/libs/techbite-1.1.0-all.jar&quot;&#10;&#10;if [ ! -f &quot;$FAT_JAR&quot; ]; then&#10;    echo &quot;⚠️  Fat JAR não encontrado. Construindo...&quot;&#10;    ./gradlew fatJar&#10;    echo &quot;&quot;&#10;fi&#10;&#10;# Executa o fat JAR&#10;echo &quot; Executando aplicação...&quot;&#10;java -jar &quot;$FAT_JAR&quot;&#10;" />
+              <option name="updatedContent" value="#!/bin/bash&#10;&#10;# Script para executar o TechBite Fat JAR&#10;# Uso: ./run-fatjar.sh&#10;&#10;echo &quot; TechBite - Executando Fat JAR...&quot;&#10;echo &quot;&quot;&#10;&#10;# Verifica se o fat JAR existe&#10;FAT_JAR=&quot;build/libs/techbite-1.1.0-all.jar&quot;&#10;&#10;if [ ! -f &quot;$FAT_JAR&quot; ]; then&#10;    echo &quot;⚠️  Fat JAR não encontrado. Construindo com Shadow...&quot;&#10;    ./gradlew shadowJar || ./gradlew fatJar&#10;    echo &quot;&quot;&#10;fi&#10;&#10;# Executa o fat JAR&#10;echo &quot; Executando aplicação...&quot;&#10;java -jar &quot;$FAT_JAR&quot;" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/settings.gradle">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/settings.gradle" />
+              <option name="originalContent" value="pluginManagement {&#10;    repositories {&#10;        gradlePluginPortal()&#10;        mavenCentral()&#10;    }&#10;}&#10;&#10;rootProject.name = 'techbite'&#10;" />
+              <option name="updatedContent" value="pluginManagement {&#10;    repositories {&#10;        gradlePluginPortal()&#10;        mavenCentral()&#10;    }&#10;}&#10;&#10;rootProject.name = 'techbite'" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
